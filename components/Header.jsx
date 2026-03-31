@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -57,9 +58,14 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-2xl font-bold text-primary-foreground">KSL</span>
-            </div>
+            <Image
+              src="/logo.webp"
+              alt="KSL Boxing Lahr"
+              width={48}
+              height={48}
+              className="rounded-lg"
+              priority
+            />
             <span className="text-xl font-bold hidden sm:block">KSL Boxing Lahr</span>
           </Link>
 

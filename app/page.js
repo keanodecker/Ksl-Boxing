@@ -9,7 +9,8 @@ import GroupCard from '@/components/GroupCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, Trophy, Medal, Star } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 
 export default function HomePage() {
   const router = useRouter();
@@ -165,6 +166,147 @@ export default function HomePage() {
     <main>
       {/* Hero Slider */}
       <HeroSlider slides={heroSlides} />
+
+      {/* Champions Section */}
+      <section className="py-20 bg-secondary">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Unsere Champions</h2>
+            <p className="text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+              Athleten, die den Namen KSL Boxing Lahr in die Geschichtsbücher geschrieben haben.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {/* Card 1 – Sezer Ülker */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="h-full"
+              >
+                <Card className="bg-card text-card-foreground border-border h-full flex flex-col">
+                  <CardHeader>
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Trophy className="w-6 h-6 text-primary-foreground" />
+                      </div>
+                      <Badge className="bg-primary text-primary-foreground text-xs font-bold tracking-wider uppercase">
+                        EUROPAMEISTER
+                      </Badge>
+                    </div>
+                    <CardTitle className="text-2xl font-bold">
+                      Sezer &bdquo;Cesar&ldquo; Ülker
+                    </CardTitle>
+                    <p className="text-sm text-primary font-medium">&bdquo;Der Schwarzwaldbulle&ldquo;</p>
+                  </CardHeader>
+                  <CardContent className="flex-grow flex flex-col gap-4">
+                    <p className="text-muted-foreground leading-relaxed">
+                      2015 erkämpfte er sich vor über 700 Zuschauern im Lahrer Hallensportzentrum den I.B.F. Europameistertitel im Schwergewicht durch K.o. in Runde 2. Ungeschlagen in allen 5 Profikämpfen. Mitgründer von KSL Boxing im Jahr 2004.
+                    </p>
+                    <div className="mt-auto pt-4 border-t border-border">
+                      <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">
+                        <span className="flex items-center gap-1"><span className="text-primary font-bold">5</span> Profikämpfe</span>
+                        <span className="text-border">·</span>
+                        <span className="flex items-center gap-1"><span className="text-primary font-bold">5</span> Siege</span>
+                        <span className="text-border">·</span>
+                        <span className="text-primary font-semibold">Europameister I.B.F.</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              {/* Card 2 – Belkijan Kaleshiq */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="h-full"
+              >
+                <Card className="bg-card text-card-foreground border-border h-full flex flex-col">
+                  <CardHeader>
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Medal className="w-6 h-6 text-primary-foreground" />
+                      </div>
+                      <Badge className="bg-primary text-primary-foreground text-xs font-bold tracking-wider uppercase">
+                        LANDESMEISTER
+                      </Badge>
+                    </div>
+                    <CardTitle className="text-2xl font-bold">Belkijan Kaleshiq</CardTitle>
+                    <p className="text-sm text-primary font-medium">17 Jahre, U19 A-Klasse</p>
+                  </CardHeader>
+                  <CardContent className="flex-grow flex flex-col gap-4">
+                    <p className="text-muted-foreground leading-relaxed">
+                      5 Landesmeisterschaften in Folge, 4× Badischer Meister. Eines der größten Boxtalente der Region.
+                    </p>
+                    <div className="mt-auto pt-4 border-t border-border">
+                      <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">
+                        <span className="text-primary font-semibold">5× Landesmeister</span>
+                        <span className="text-border">·</span>
+                        <span className="text-primary font-semibold">4× Badischer Meister</span>
+                        <span className="text-border">·</span>
+                        <span>U19 A-Klasse</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              {/* Card 3 – Nachwuchs */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="h-full"
+              >
+                <Card className="bg-card text-card-foreground border-border h-full flex flex-col">
+                  <CardHeader>
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Star className="w-6 h-6 text-primary-foreground" />
+                      </div>
+                      <Badge className="bg-primary text-primary-foreground text-xs font-bold tracking-wider uppercase">
+                        NACHWUCHS-STARS
+                      </Badge>
+                    </div>
+                    <CardTitle className="text-2xl font-bold">Die nächste Generation</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow flex flex-col gap-4">
+                    <p className="text-muted-foreground leading-relaxed">
+                      Viktor Federov holte bei seinem allerersten Turnier in der A-Klasse (U15, eigentlich U13) die Bronzemedaille. Roman Becker wurde beim selben Turnier sein Kampf als bester Kampf der gesamten Altersgruppe ausgezeichnet – bei erst seinem zweiten Kampf überhaupt.
+                    </p>
+                    <div className="mt-auto pt-4 border-t border-border">
+                      <div className="flex flex-col gap-1 text-xs text-muted-foreground">
+                        <span><span className="text-primary font-semibold">Viktor:</span> Bronze – 1. Turnier</span>
+                        <span><span className="text-primary font-semibold">Roman:</span> Bester Kampf des Turniers – 2. Kampf</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </div>
+
+            {/* CTA */}
+            <div className="text-center p-8 bg-muted rounded-2xl border border-border">
+              <p className="text-xl font-semibold mb-6 max-w-xl mx-auto">
+                Werde Teil unserer Erfolgsgeschichte – Probetraining kostenlos.
+              </p>
+              <Button
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98]"
+                onClick={() => router.push('/contact')}
+              >
+                Jetzt Probetraining vereinbaren
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Latest News Section */}
       <section className="py-20 bg-background">
