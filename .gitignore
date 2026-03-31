@@ -1,0 +1,17 @@
+# Next.js
+.next/
+out/
+
+# Node
+node_modules/
+package-lock.json
+
+# Build
+dist/
+
+# Horizons source (extracted)
+horizons-src/
+
+# Misc
+.DS_Store
+*.local
