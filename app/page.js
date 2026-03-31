@@ -1,0 +1,367 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import HeroSlider from '@/components/HeroSlider';
+import NewsCard from '@/components/NewsCard';
+import GroupCard from '@/components/GroupCard';
+import TestimonialCard from '@/components/TestimonialCard';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { CheckCircle2 } from 'lucide-react';
+
+export default function HomePage() {
+  const router = useRouter();
+
+  const heroSlides = [
+    {
+      image: 'https://images.unsplash.com/photo-1695292007578-583aeda2729a',
+      title: 'Willkommen bei KSL Boxing Lahr',
+      subtitle: 'Tradition trifft Leidenschaft – Boxen für alle Altersgruppen und Leistungsstufen',
+      buttonText: 'Mehr erfahren',
+      link: '/club'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1601039834205-4e3f1e932f5a',
+      title: 'Wettkampfmannschaft',
+      subtitle: 'Hochleistungstraining für ambitionierte Boxer – Werde Teil unseres Wettkampfteams',
+      buttonText: 'Zum Team',
+      link: '/groups#competition'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1702667752618-0f347ec02f74',
+      title: 'Fitness-Boxen',
+      subtitle: 'Effektives Ganzkörpertraining – Verbessere Kraft, Ausdauer und Koordination',
+      buttonText: 'Jetzt starten',
+      link: '/groups#fitness'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1475670033737-f3bfd43d2d29',
+      title: 'Frauenboxen',
+      subtitle: 'Empowerment durch Sport – Spezielles Training für Frauen in motivierender Atmosphäre',
+      buttonText: 'Mehr erfahren',
+      link: '/groups#women'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1638851240443-762225963c29',
+      title: 'Kinder & Jugend',
+      subtitle: 'Spielerisch Boxen lernen – Förderung von Disziplin, Respekt und Selbstvertrauen',
+      buttonText: 'Für Kids',
+      link: '/groups#kids'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1679500502523-b40fb6f0563d',
+      title: 'Anfängertraining',
+      subtitle: 'Keine Vorkenntnisse nötig – Starte deine Box-Karriere mit professioneller Anleitung',
+      buttonText: 'Probetraining',
+      link: '/groups#beginners'
+    }
+  ];
+
+  const latestNews = [
+    {
+      title: 'Erfolgreicher Saisonstart der Wettkampfmannschaft',
+      date: '15. März 2026',
+      author: 'Thomas Müller',
+      preview: 'Unsere Wettkampfmannschaft startet mit beeindruckenden Siegen in die neue Saison. Drei unserer Athleten konnten ihre Kämpfe für sich entscheiden.',
+      link: '/news'
+    },
+    {
+      title: 'Neue Trainingszeiten für Fitness-Boxen',
+      date: '10. März 2026',
+      author: 'Sarah Schmidt',
+      preview: 'Ab April bieten wir zusätzliche Trainingszeiten für Fitness-Boxen an. Jetzt auch mittwochs um 19:00 Uhr verfügbar.',
+      link: '/news'
+    },
+    {
+      title: 'Tag der offenen Tür am 5. April',
+      date: '5. März 2026',
+      author: 'Michael Weber',
+      preview: 'Besuchen Sie uns am 5. April zum Tag der offenen Tür. Schnuppertraining, Vorführungen und Beratung für Interessierte.',
+      link: '/news'
+    }
+  ];
+
+  const trainingGroups = [
+    {
+      image: 'https://images.unsplash.com/photo-1679500683809-35c8236381b6',
+      name: 'Wettkampfmannschaft',
+      description: 'Intensives Training für ambitionierte Boxer mit Wettkampferfahrung. Technische Perfektion und taktische Schulung stehen im Vordergrund.',
+      detailsLink: '/groups#competition',
+      timesLink: '/training-times#competition'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1697240666845-6095e2425870',
+      name: 'Fitness-Boxen',
+      description: 'Effektives Ganzkörpertraining ohne Wettkampfambitionen. Verbessere Ausdauer, Kraft und Koordination in motivierender Gruppenatmosphäre.',
+      detailsLink: '/groups#fitness',
+      timesLink: '/training-times#fitness'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1517438322307-e67111335449',
+      name: 'Frauenboxen',
+      description: 'Spezielles Training für Frauen jeden Alters. Selbstverteidigung, Fitness und Selbstbewusstsein in einem sicheren Umfeld.',
+      detailsLink: '/groups#women',
+      timesLink: '/training-times#women'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1617629790501-6df2d6ac9822',
+      name: 'Jugendtraining',
+      description: 'Für Jugendliche von 13-17 Jahren. Technische Grundlagen, Fitness und Charakterbildung durch den Boxsport.',
+      detailsLink: '/groups#youth',
+      timesLink: '/training-times#youth'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1593352217070-4900df41715b',
+      name: 'Kindertraining',
+      description: 'Spielerisches Boxtraining für Kinder von 6-12 Jahren. Förderung von Koordination, Disziplin und sozialem Verhalten.',
+      detailsLink: '/groups#kids',
+      timesLink: '/training-times#kids'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1679500683809-35c8236381b6',
+      name: 'Anfängertraining',
+      description: 'Perfekt für Einsteiger ohne Vorkenntnisse. Grundlagen des Boxens in entspannter Atmosphäre mit erfahrenen Trainern.',
+      detailsLink: '/groups#beginners',
+      timesLink: '/training-times#beginners'
+    }
+  ];
+
+  const testimonials = [
+    {
+      quote: 'KSL Boxing hat mein Leben verändert. Die Trainer sind top und die Atmosphäre ist familiär. Ich habe nicht nur technisch viel gelernt, sondern auch an Selbstvertrauen gewonnen.',
+      name: 'Markus Schneider',
+      role: 'Mitglied seit 2023'
+    },
+    {
+      quote: 'Als Frau hatte ich anfangs Bedenken, aber das Frauenboxen-Training ist perfekt. Tolle Gruppe, professionelle Anleitung und ein sicheres Umfeld zum Lernen.',
+      name: 'Julia Hoffmann',
+      role: 'Frauenboxen'
+    },
+    {
+      quote: 'Mein Sohn trainiert seit einem Jahr bei KSL Boxing. Die Entwicklung ist beeindruckend – nicht nur sportlich, sondern auch in Sachen Disziplin und Respekt.',
+      name: 'Andreas Becker',
+      role: 'Vater eines Nachwuchsboxers'
+    },
+    {
+      quote: 'Das Fitness-Boxen ist das beste Workout, das ich je gemacht habe. Abwechslungsreich, intensiv und macht einfach Spaß. Die Gruppe motiviert sich gegenseitig.',
+      name: 'Lisa Wagner',
+      role: 'Fitness-Boxen'
+    },
+    {
+      quote: 'Von Null auf Wettkampfniveau in zwei Jahren – dank der hervorragenden Trainer bei KSL Boxing. Die individuelle Betreuung macht den Unterschied.',
+      name: 'David Klein',
+      role: 'Wettkampfmannschaft'
+    },
+    {
+      quote: 'Ich bin mit 45 Jahren als Anfänger eingestiegen und wurde super aufgenommen. Alter spielt hier keine Rolle – jeder wird dort abgeholt, wo er steht.',
+      name: 'Stefan Richter',
+      role: 'Anfängertraining'
+    }
+  ];
+
+  return (
+    <main>
+      {/* Hero Slider */}
+      <HeroSlider slides={heroSlides} />
+
+      {/* Latest News Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Aktuelle News</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {latestNews.map((news, index) => (
+                <NewsCard key={index} {...news} />
+              ))}
+            </div>
+            <div className="text-center mt-12">
+              <Button
+                size="lg"
+                variant="outline"
+                className="transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:border-primary active:scale-[0.98]"
+                onClick={() => router.push('/news')}
+              >
+                Alle News anzeigen
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Welcome Section */}
+      <section className="py-20 bg-secondary">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="flex justify-center"
+            >
+              <div className="w-64 h-64 bg-primary rounded-2xl flex items-center justify-center shadow-lg">
+                <span className="text-8xl font-bold text-primary-foreground">KSL</span>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Willkommen bei KSL Boxing Lahr</h2>
+              <p className="text-lg leading-relaxed mb-4">
+                KSL Boxing Lahr ist mehr als nur ein Boxverein – wir sind eine Familie. Seit unserer Gründung bieten wir professionelles Boxtraining für alle Altersgruppen und Leistungsstufen an.
+              </p>
+              <p className="text-lg leading-relaxed mb-4">
+                Ob Anfänger oder erfahrener Wettkämpfer, ob Fitness-orientiert oder leistungssportlich ambitioniert – bei uns findet jeder das passende Training. Unsere qualifizierten Trainer legen Wert auf individuelle Betreuung und schaffen eine motivierende Atmosphäre.
+              </p>
+              <p className="text-lg leading-relaxed mb-6">
+                Besucher sind jederzeit herzlich willkommen. Komm vorbei und überzeuge dich selbst von unserem Training in Lahr!
+              </p>
+              <Button
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98]"
+                onClick={() => router.push('/contact')}
+              >
+                Kontakt aufnehmen
+              </Button>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Training Groups Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Unsere Trainingsgruppen</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {trainingGroups.map((group, index) => (
+                <GroupCard key={index} {...group} index={index} />
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Info Boxes Section */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Card className="bg-card text-card-foreground border-border h-full">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-semibold">Probetraining</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg leading-relaxed mb-6">
+                    Interessiert am Boxsport? Komm zu einem kostenlosen Probetraining und lerne unseren Verein kennen. Keine Vorkenntnisse erforderlich – bring einfach Sportkleidung mit!
+                  </p>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                      <span>Kostenlos und unverbindlich</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                      <span>Professionelle Anleitung durch erfahrene Trainer</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                      <span>Ausrüstung wird gestellt</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                      <span>Für alle Altersgruppen geeignet</span>
+                    </li>
+                  </ul>
+                  <Button
+                    size="lg"
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98]"
+                    onClick={() => router.push('/contact')}
+                  >
+                    Jetzt anmelden
+                  </Button>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <Card className="bg-card text-card-foreground border-border h-full">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-semibold">Mitgliedschaft</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg leading-relaxed mb-6">
+                    Werde Teil der KSL Boxing Familie. Unsere Mitgliedsbeiträge sind fair kalkuliert und ermöglichen dir unbegrenzten Zugang zu allen Trainingseinheiten deiner Gruppe.
+                  </p>
+                  <div className="space-y-4 mb-6">
+                    <div className="flex justify-between items-center p-4 bg-secondary rounded-lg">
+                      <span className="font-medium">Erwachsene</span>
+                      <span className="text-xl font-bold text-primary">49€/Monat</span>
+                    </div>
+                    <div className="flex justify-between items-center p-4 bg-secondary rounded-lg">
+                      <span className="font-medium">Jugendliche (13-17)</span>
+                      <span className="text-xl font-bold text-primary">35€/Monat</span>
+                    </div>
+                    <div className="flex justify-between items-center p-4 bg-secondary rounded-lg">
+                      <span className="font-medium">Kinder (6-12)</span>
+                      <span className="text-xl font-bold text-primary">29€/Monat</span>
+                    </div>
+                    <div className="flex justify-between items-center p-4 bg-secondary rounded-lg">
+                      <span className="font-medium">Premium (alle Gruppen)</span>
+                      <span className="text-xl font-bold text-primary">69€/Monat</span>
+                    </div>
+                  </div>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:border-primary active:scale-[0.98]"
+                    onClick={() => router.push('/club#membership')}
+                  >
+                    Mehr erfahren
+                  </Button>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Was unsere Mitglieder sagen</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {testimonials.map((testimonial, index) => (
+                <TestimonialCard key={index} {...testimonial} index={index} />
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </main>
+  );
+}
