@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import HeroSlider from '@/components/HeroSlider';
@@ -346,9 +347,13 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               className="flex justify-center"
             >
-              <div className="w-64 h-64 bg-primary rounded-2xl flex items-center justify-center shadow-lg">
-                <span className="text-8xl font-bold text-primary-foreground">KSL</span>
-              </div>
+              <Image
+                src="/logo.webp"
+                alt="KSL Boxing Lahr"
+                width={256}
+                height={256}
+                className="rounded-2xl shadow-lg"
+              />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 30 }}
@@ -397,93 +402,48 @@ export default function HomePage() {
 
       {/* Info Boxes Section */}
       <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Card className="bg-card text-card-foreground border-border h-full">
-                <CardHeader>
-                  <CardTitle className="text-2xl font-semibold">Probetraining</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-lg leading-relaxed mb-6">
-                    Interessiert am Boxsport? Komm zu einem kostenlosen Probetraining und lerne unseren Verein kennen. Keine Vorkenntnisse erforderlich – bring einfach Sportkleidung mit!
-                  </p>
-                  <ul className="space-y-3 mb-6">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                      <span>Kostenlos und unverbindlich</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                      <span>Professionelle Anleitung durch erfahrene Trainer</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                      <span>Ausrüstung wird gestellt</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                      <span>Für alle Altersgruppen geeignet</span>
-                    </li>
-                  </ul>
-                  <Button
-                    size="lg"
-                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98]"
-                    onClick={() => router.push('/contact')}
-                  >
-                    Jetzt anmelden
-                  </Button>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <Card className="bg-card text-card-foreground border-border h-full">
-                <CardHeader>
-                  <CardTitle className="text-2xl font-semibold">Mitgliedschaft</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-lg leading-relaxed mb-6">
-                    Werde Teil der KSL Boxing Familie. Unsere Mitgliedsbeiträge sind fair kalkuliert und ermöglichen dir unbegrenzten Zugang zu allen Trainingseinheiten deiner Gruppe.
-                  </p>
-                  <div className="space-y-4 mb-6">
-                    <div className="flex justify-between items-center p-4 bg-secondary rounded-lg">
-                      <span className="font-medium">Erwachsene</span>
-                      <span className="text-xl font-bold text-primary">49€/Monat</span>
-                    </div>
-                    <div className="flex justify-between items-center p-4 bg-secondary rounded-lg">
-                      <span className="font-medium">Jugendliche (13-17)</span>
-                      <span className="text-xl font-bold text-primary">35€/Monat</span>
-                    </div>
-                    <div className="flex justify-between items-center p-4 bg-secondary rounded-lg">
-                      <span className="font-medium">Kinder (6-12)</span>
-                      <span className="text-xl font-bold text-primary">29€/Monat</span>
-                    </div>
-                    <div className="flex justify-between items-center p-4 bg-secondary rounded-lg">
-                      <span className="font-medium">Premium (alle Gruppen)</span>
-                      <span className="text-xl font-bold text-primary">69€/Monat</span>
-                    </div>
-                  </div>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="w-full transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:border-primary active:scale-[0.98]"
-                    onClick={() => router.push('/club#membership')}
-                  >
-                    Mehr erfahren
-                  </Button>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Card className="bg-card text-card-foreground border-border">
+              <CardHeader>
+                <CardTitle className="text-2xl font-semibold">Probetraining</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg leading-relaxed mb-6">
+                  Interessiert am Boxsport? Komm zu einem kostenlosen Probetraining und lerne unseren Verein kennen. Keine Vorkenntnisse erforderlich – bring einfach Sportkleidung mit!
+                </p>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span>Kostenlos und unverbindlich</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span>Professionelle Anleitung durch erfahrene Trainer</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span>Ausrüstung wird gestellt</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span>Für alle Altersgruppen geeignet</span>
+                  </li>
+                </ul>
+                <Button
+                  size="lg"
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98]"
+                  onClick={() => router.push('/contact')}
+                >
+                  Jetzt anmelden
+                </Button>
+              </CardContent>
+            </Card>
+          </motion.div>
         </div>
       </section>
 
