@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -52,39 +53,55 @@ const Header = () => {
 
   const isActive = (path) => pathname === path;
 
+  const dropdownItemClass =
+    'block select-none rounded-md p-3 text-sm font-medium leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground';
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-2xl font-bold text-primary-foreground">KSL</span>
-            </div>
+            <Image
+              src="/logo.webp"
+              alt="KSL Boxing Lahr"
+              width={48}
+              height={48}
+              className="rounded-lg"
+              priority
+            />
             <span className="text-xl font-bold hidden sm:block">KSL Boxing Lahr</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
-            <Link
-              href="/"
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                isActive('/') ? 'text-primary border-b-2 border-primary' : 'text-foreground'
-              }`}
-            >
-              Home
-            </Link>
-
-            <Link
-              href="/news"
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                isActive('/news') ? 'text-primary border-b-2 border-primary' : 'text-foreground'
-              }`}
-            >
-              News
-            </Link>
-
+          {/* Desktop Navigation – single NavigationMenu for uniform spacing */}
+          <nav className="hidden lg:block">
             <NavigationMenu>
               <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href="/"
+                      className={`text-sm font-medium px-3 py-2 transition-colors hover:text-primary ${
+                        isActive('/') ? 'text-primary border-b-2 border-primary' : 'text-foreground'
+                      }`}
+                    >
+                      Home
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href="/news"
+                      className={`text-sm font-medium px-3 py-2 transition-colors hover:text-primary ${
+                        isActive('/news') ? 'text-primary border-b-2 border-primary' : 'text-foreground'
+                      }`}
+                    >
+                      News
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="text-sm font-medium">Verein</NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -92,11 +109,8 @@ const Header = () => {
                       {clubLinks.map((link) => (
                         <li key={link.href}>
                           <NavigationMenuLink asChild>
-                            <a
-                              href={link.href}
-                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                            >
-                              <div className="text-sm font-medium leading-none">{link.title}</div>
+                            <a href={link.href} className={dropdownItemClass}>
+                              {link.title}
                             </a>
                           </NavigationMenuLink>
                         </li>
@@ -104,11 +118,7 @@ const Header = () => {
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
 
-            <NavigationMenu>
-              <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="text-sm font-medium">Gruppen</NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -116,11 +126,8 @@ const Header = () => {
                       {groupLinks.map((link) => (
                         <li key={link.href}>
                           <NavigationMenuLink asChild>
-                            <a
-                              href={link.href}
-                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                            >
-                              <div className="text-sm font-medium leading-none">{link.title}</div>
+                            <a href={link.href} className={dropdownItemClass}>
+                              {link.title}
                             </a>
                           </NavigationMenuLink>
                         </li>
@@ -128,11 +135,7 @@ const Header = () => {
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
 
-            <NavigationMenu>
-              <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="text-sm font-medium">Trainingszeiten</NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -140,11 +143,8 @@ const Header = () => {
                       {trainingLinks.map((link) => (
                         <li key={link.href}>
                           <NavigationMenuLink asChild>
-                            <a
-                              href={link.href}
-                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                            >
-                              <div className="text-sm font-medium leading-none">{link.title}</div>
+                            <a href={link.href} className={dropdownItemClass}>
+                              {link.title}
                             </a>
                           </NavigationMenuLink>
                         </li>
@@ -152,26 +152,34 @@ const Header = () => {
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href="/photos"
+                      className={`text-sm font-medium px-3 py-2 transition-colors hover:text-primary ${
+                        isActive('/photos') ? 'text-primary border-b-2 border-primary' : 'text-foreground'
+                      }`}
+                    >
+                      Fotos
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href="/contact"
+                      className={`text-sm font-medium px-3 py-2 transition-colors hover:text-primary ${
+                        isActive('/contact') ? 'text-primary border-b-2 border-primary' : 'text-foreground'
+                      }`}
+                    >
+                      Kontakt
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-
-            <Link
-              href="/photos"
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                isActive('/photos') ? 'text-primary border-b-2 border-primary' : 'text-foreground'
-              }`}
-            >
-              Fotos
-            </Link>
-
-            <Link
-              href="/contact"
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                isActive('/contact') ? 'text-primary border-b-2 border-primary' : 'text-foreground'
-              }`}
-            >
-              Kontakt
-            </Link>
           </nav>
 
           {/* Mobile Menu */}
