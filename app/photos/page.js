@@ -1,6 +1,7 @@
 import { readdirSync } from 'fs';
 import { join } from 'path';
 import PhotoGallery from '@/components/PhotoGallery';
+import { kidsVideos, clubVideos, geschichteVideos } from '@/lib/videos-config';
 
 function readPhotos(folder) {
   try {
@@ -29,7 +30,14 @@ export default function PhotosPage() {
         <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-3xl">
           Eindrücke aus unserem Training und Vereinsleben bei KSL Boxing Lahr.
         </p>
-        <PhotoGallery kidsPhotos={kidsPhotos} clubPhotos={clubPhotos} geschichtePhotos={geschichtePhotos} />
+        <PhotoGallery
+          kidsPhotos={kidsPhotos}
+          clubPhotos={clubPhotos}
+          geschichtePhotos={geschichtePhotos}
+          kidsVideos={kidsVideos}
+          clubVideos={clubVideos}
+          geschichteVideos={geschichteVideos}
+        />
       </div>
     </main>
   );
