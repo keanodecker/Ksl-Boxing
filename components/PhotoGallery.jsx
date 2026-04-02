@@ -5,23 +5,23 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { X } from 'lucide-react';
 
-export default function PhotoGallery({ kidsPhotos, clubPhotos }) {
+export default function PhotoGallery({ kidsPhotos, clubPhotos, geschichtePhotos = [] }) {
   const [filter, setFilter] = useState('all');
   const [selected, setSelected] = useState(null);
 
   const all = [
     ...kidsPhotos.map(src => ({ src, label: 'Kindertraining' })),
     ...clubPhotos.map(src => ({ src, label: 'Boxclub' })),
+    ...geschichtePhotos.map(src => ({ src, label: 'Geschichte' })),
   ];
 
-  const displayed = filter === 'all' ? all
-    : filter === 'kids' ? all.filter(p => p.label === 'Kindertraining')
-    : all.filter(p => p.label === 'Boxclub');
+  const displayed = filter === 'all' ? all : all.filter(p => p.label === filter);
 
   const filters = [
     { key: 'all', label: 'Alle' },
-    { key: 'kids', label: 'Kindertraining' },
-    { key: 'club', label: 'Boxclub' },
+    { key: 'Kindertraining', label: 'Kindertraining' },
+    { key: 'Boxclub', label: 'Boxclub' },
+    { key: 'Geschichte', label: 'Geschichte' },
   ];
 
   return (

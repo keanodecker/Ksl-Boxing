@@ -20,6 +20,7 @@ function readPhotos(folder) {
 export default function PhotosPage() {
   const kidsPhotos = readPhotos('kindertraining');
   const clubPhotos = readPhotos('club-fotos');
+  const geschichtePhotos = readPhotos('geschichte');
 
   return (
     <main className="py-20">
@@ -28,7 +29,7 @@ export default function PhotosPage() {
         <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-3xl">
           Eindrücke aus unserem Training und Vereinsleben bei KSL Boxing Lahr.
         </p>
-        <PhotoGallery kidsPhotos={kidsPhotos} clubPhotos={clubPhotos} />
+        <PhotoGallery kidsPhotos={kidsPhotos} clubPhotos={clubPhotos} geschichtePhotos={geschichtePhotos} />
       </div>
     </main>
   );
