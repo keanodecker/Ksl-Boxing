@@ -33,14 +33,30 @@ export default function PhotoGallery({
     return result;
   }
 
+  // "Alle"-Ansicht: 2× Kindertraining-Foto, 1× Boxclub-Foto, 1× Kindertraining-Video, 1× Geschichte-Foto (wiederholt)
+  function buildAllView() {
+    const kp = kidsPhotos.map(src => ({ type: 'photo', src, label: 'Kindertraining' }));
+    const cp = clubPhotos.map(src => ({ type: 'photo', src, label: 'Boxclub' }));
+    const gp = geschichtePhotos.map(src => ({ type: 'photo', src, label: 'Geschichte' }));
+    const kv = kidsVideos.map(x => ({ type: 'video', videoId: x.videoId, title: x.title, src: ytThumb(x.videoId), label: 'Kindertraining' }));
+    const result = [];
+    let ki = 0, ci = 0, gi = 0, vi = 0;
+    while (ki < kp.length || ci < cp.length || gi < gp.length || vi < kv.length) {
+      if (ki < kp.length) result.push(kp[ki++]);
+      if (ki < kp.length) result.push(kp[ki++]);
+      if (ci < cp.length) result.push(cp[ci++]);
+      if (vi < kv.length) result.push(kv[vi++]);
+      if (gi < gp.length) result.push(gp[gi++]);
+    }
+    return result;
+  }
+
   const kidsItems = interleave(kidsPhotos, kidsVideos, 'Kindertraining');
   const clubItems = interleave(clubPhotos, clubVideos, 'Boxclub');
   const geschichteItems = interleave(geschichtePhotos, geschichteVideos, 'Geschichte');
 
-  const all = [...kidsItems, ...clubItems, ...geschichteItems];
-
   const displayed =
-    filter === 'all' ? all :
+    filter === 'all' ? buildAllView() :
     filter === 'Kindertraining' ? kidsItems :
     filter === 'Boxclub' ? clubItems :
     geschichteItems;
