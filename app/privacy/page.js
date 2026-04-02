@@ -12,7 +12,8 @@ export default function PrivacyPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-12">Datenschutzerklärung</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Datenschutzerklärung</h1>
+          <p className="text-sm text-muted-foreground mb-12">Stand: 2026</p>
 
           <Card className="bg-card text-card-foreground border-border mb-8">
             <CardHeader>
@@ -67,10 +68,10 @@ export default function PrivacyPage() {
                 </p>
                 <p className="text-muted-foreground mt-2">
                   KSL Boxing Lahr e.V.<br />
-                  Musterstraße 123<br />
+                  Dinglingerhauptstr. 87<br />
                   77933 Lahr/Schwarzwald<br />
-                  Telefon: +49 7821 123456<br />
-                  E-Mail: info@ksl-boxing-lahr.de
+                  Telefon: [Telefonnummer eintragen]<br />
+                  E-Mail: [E-Mail-Adresse eintragen]
                 </p>
               </div>
               <div>
