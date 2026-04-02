@@ -1,8 +1,10 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Trophy, Dumbbell, Users, Zap, Smile, GraduationCap, Clock } from 'lucide-react';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Trophy, Dumbbell, Users, Zap, Smile, GraduationCap, Clock, Play, X } from 'lucide-react';
 
 const groups = [
   {
@@ -112,7 +114,9 @@ const groups = [
   },
 ];
 
-export default function GroupsContent({ kidsPhotos }) {
+export default function GroupsContent({ kidsPhotos = [], kidsVideos = [] }) {
+  const [activeVideo, setActiveVideo] = useState(null);
+
   return (
     <main className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -183,16 +187,13 @@ export default function GroupsContent({ kidsPhotos }) {
                     </CardContent>
                   </Card>
 
-                  {/* Kindertraining Fotos – direkt unter der Karte */}
-                  {group.id === 'kids' && kidsPhotos.length > 0 && (
+                  {/* Kindertraining Fotos & Videos */}
+                  {group.id === 'kids' && (kidsPhotos.length > 0 || kidsVideos.length > 0) && (
                     <div className="mt-8">
                       <h3 className="text-xl font-semibold mb-4">Impressionen aus dem Kindertraining</h3>
                       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
                         {kidsPhotos.map((src, i) => (
-                          <div
-                            key={src}
-                            className="relative aspect-square overflow-hidden rounded-lg group"
-                          >
+                          <div key={src} className="relative aspect-square overflow-hidden rounded-lg group">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                               src={src}
@@ -200,6 +201,26 @@ export default function GroupsContent({ kidsPhotos }) {
                               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                               loading="lazy"
                             />
+                          </div>
+                        ))}
+                        {kidsVideos.map((v) => (
+                          <div
+                            key={v.videoId}
+                            className="relative aspect-square overflow-hidden rounded-lg cursor-pointer group"
+                            onClick={() => setActiveVideo(v)}
+                          >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                              src={`https://img.youtube.com/vi/${v.videoId}/hqdefault.jpg`}
+                              alt={v.title}
+                              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                              loading="lazy"
+                            />
+                            <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors">
+                              <div className="bg-black/60 group-hover:bg-primary rounded-full p-3 transition-colors duration-200">
+                                <Play className="w-6 h-6 text-white fill-white" />
+                              </div>
+                            </div>
                           </div>
                         ))}
                       </div>
@@ -211,6 +232,30 @@ export default function GroupsContent({ kidsPhotos }) {
           </div>
         </motion.div>
       </div>
+
+      <Dialog open={!!activeVideo} onOpenChange={() => setActiveVideo(null)}>
+        <DialogContent className="max-w-4xl p-0 bg-transparent border-0">
+          <button
+            onClick={() => setActiveVideo(null)}
+            className="absolute -top-12 right-0 text-white hover:text-primary transition-colors"
+            aria-label="Schließen"
+          >
+            <X className="w-8 h-8" />
+          </button>
+          {activeVideo && (
+            <div className="aspect-video w-full rounded-lg overflow-hidden">
+              <iframe
+                src={`https://www.youtube.com/embed/${activeVideo.videoId}?autoplay=1`}
+                width="100%"
+                height="100%"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title={activeVideo.title}
+              />
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </main>
   );
 }
