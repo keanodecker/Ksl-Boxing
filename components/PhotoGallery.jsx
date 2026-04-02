@@ -51,8 +51,20 @@ export default function PhotoGallery({
     return result;
   }
 
+  // Boxclub: Video als 5.-letzter Inhalt einsetzen
+  function insertNthFromEnd(photos, videos, label, n = 5) {
+    const p = photos.map(src => ({ type: 'photo', src, label }));
+    const v = videos.map(x => ({ type: 'video', videoId: x.videoId, title: x.title, src: ytThumb(x.videoId), label }));
+    if (v.length === 0) return p;
+    const result = [...p];
+    const insertAt = Math.max(0, result.length - (n - 1));
+    result.splice(insertAt, 0, v[0]);
+    for (let i = 1; i < v.length; i++) result.push(v[i]);
+    return result;
+  }
+
   const kidsItems = interleave(kidsPhotos, kidsVideos, 'Kindertraining');
-  const clubItems = interleave(clubPhotos, clubVideos, 'Boxclub');
+  const clubItems = insertNthFromEnd(clubPhotos, clubVideos, 'Boxclub', 5);
   const geschichteItems = interleave(geschichtePhotos, geschichteVideos, 'Geschichte');
 
   const displayed =
