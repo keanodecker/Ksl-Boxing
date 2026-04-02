@@ -20,16 +20,46 @@ export default function PhotoGallery({
   const [filter, setFilter] = useState('all');
   const [selected, setSelected] = useState(null);
 
-  const all = [
-    ...kidsPhotos.map(src => ({ type: 'photo', src, label: 'Kindertraining' })),
-    ...kidsVideos.map(v => ({ type: 'video', videoId: v.videoId, title: v.title, src: ytThumb(v.videoId), label: 'Kindertraining' })),
-    ...clubPhotos.map(src => ({ type: 'photo', src, label: 'Boxclub' })),
-    ...clubVideos.map(v => ({ type: 'video', videoId: v.videoId, title: v.title, src: ytThumb(v.videoId), label: 'Boxclub' })),
-    ...geschichtePhotos.map(src => ({ type: 'photo', src, label: 'Geschichte' })),
-    ...geschichteVideos.map(v => ({ type: 'video', videoId: v.videoId, title: v.title, src: ytThumb(v.videoId), label: 'Geschichte' })),
-  ];
+  function interleave(photos, videos, label) {
+    const p = photos.map(src => ({ type: 'photo', src, label }));
+    const v = videos.map(x => ({ type: 'video', videoId: x.videoId, title: x.title, src: ytThumb(x.videoId), label }));
+    const result = [];
+    let vi = 0;
+    p.forEach((photo, i) => {
+      result.push(photo);
+      if ((i + 1) % 5 === 0 && vi < v.length) result.push(v[vi++]);
+    });
+    while (vi < v.length) result.push(v[vi++]);
+    return result;
+  }
 
-  const displayed = filter === 'all' ? all : all.filter(p => p.label === filter);
+  // "Alle"-Ansicht: 2× Kindertraining-Foto, 1× Boxclub-Foto, 1× Kindertraining-Video, 1× Geschichte-Foto (wiederholt)
+  function buildAllView() {
+    const kp = kidsPhotos.map(src => ({ type: 'photo', src, label: 'Kindertraining' }));
+    const cp = clubPhotos.map(src => ({ type: 'photo', src, label: 'Boxclub' }));
+    const gp = geschichtePhotos.map(src => ({ type: 'photo', src, label: 'Geschichte' }));
+    const kv = kidsVideos.map(x => ({ type: 'video', videoId: x.videoId, title: x.title, src: ytThumb(x.videoId), label: 'Kindertraining' }));
+    const result = [];
+    let ki = 0, ci = 0, gi = 0, vi = 0;
+    while (ki < kp.length || ci < cp.length || gi < gp.length || vi < kv.length) {
+      if (ki < kp.length) result.push(kp[ki++]);
+      if (ki < kp.length) result.push(kp[ki++]);
+      if (ci < cp.length) result.push(cp[ci++]);
+      if (vi < kv.length) result.push(kv[vi++]);
+      if (gi < gp.length) result.push(gp[gi++]);
+    }
+    return result;
+  }
+
+  const kidsItems = interleave(kidsPhotos, kidsVideos, 'Kindertraining');
+  const clubItems = interleave(clubPhotos, clubVideos, 'Boxclub');
+  const geschichteItems = interleave(geschichtePhotos, geschichteVideos, 'Geschichte');
+
+  const displayed =
+    filter === 'all' ? buildAllView() :
+    filter === 'Kindertraining' ? kidsItems :
+    filter === 'Boxclub' ? clubItems :
+    geschichteItems;
 
   const filters = [
     { key: 'all', label: 'Alle' },
