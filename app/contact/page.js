@@ -25,11 +25,17 @@ export default function ContactPage() {
             <p className="text-muted-foreground mb-6">
               Noch nie bei uns gewesen? Dieses Video zeigt dir den Weg vom Parkplatz direkt zu unserem Boxclub.
             </p>
-            <div className="aspect-video bg-muted rounded-xl overflow-hidden border border-border">
-              {/* TODO: YouTube Video-ID hier eintragen – z.B. src="https://www.youtube.com/embed/DEINE_VIDEO_ID" */}
-              <div className="w-full h-full flex items-center justify-center text-muted-foreground text-sm">
-                Video folgt – YouTube-Link wird hier eingebettet
-              </div>
+            <div className="aspect-video rounded-xl overflow-hidden border border-border">
+              <iframe
+                src="https://www.youtube.com/embed/vOyf0YuZD14"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                title="Der Weg vom Parkplatz zum Boxing Club"
+              />
             </div>
           </div>
 
