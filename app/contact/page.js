@@ -27,7 +27,7 @@ export default function ContactPage() {
             </p>
             <div className="aspect-video rounded-xl overflow-hidden border border-border">
               <iframe
-                src="https://www.youtube.com/embed/uuGJi7odF9o"
+                src="https://www.youtube.com/embed/ddU7gUJon2E"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
