@@ -21,24 +21,27 @@ export default function ImprintPage() {
             <CardContent className="space-y-4 text-lg">
               <div>
                 <p className="font-semibold">KSL Boxing Lahr e.V.</p>
-                <p className="text-muted-foreground">Musterstraße 123</p>
+                <p className="text-muted-foreground">Dinglingerhauptstr. 87</p>
                 <p className="text-muted-foreground">77933 Lahr/Schwarzwald</p>
               </div>
               <div>
                 <p className="font-semibold">Vertreten durch:</p>
-                <p className="text-muted-foreground">Klaus Hoffmann (1. Vorsitzender)</p>
-                <p className="text-muted-foreground">Petra Wagner (2. Vorsitzende)</p>
+                <p className="text-muted-foreground">[Name 1. Vorsitzender eintragen]</p>
+                <p className="text-muted-foreground">[Name 2. Vorsitzender eintragen]</p>
               </div>
               <div>
                 <p className="font-semibold">Kontakt:</p>
-                <p className="text-muted-foreground">Telefon: +49 7821 123456</p>
-                <p className="text-muted-foreground">E-Mail: info@ksl-boxing-lahr.de</p>
+                <p className="text-muted-foreground">Telefon: [Telefonnummer eintragen]</p>
+                <p className="text-muted-foreground">E-Mail: [E-Mail-Adresse eintragen]</p>
               </div>
               <div>
                 <p className="font-semibold">Registereintrag:</p>
                 <p className="text-muted-foreground">Eintragung im Vereinsregister</p>
                 <p className="text-muted-foreground">Registergericht: Amtsgericht Freiburg</p>
-                <p className="text-muted-foreground">Registernummer: VR 12345</p>
+                <p className="text-muted-foreground">Registernummer: [Registernummer eintragen]</p>
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground/60 italic">Stand: 2026</p>
               </div>
             </CardContent>
           </Card>

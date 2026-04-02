@@ -32,23 +32,17 @@ const Header = () => {
   ];
 
   const groupLinks = [
-    { title: 'Wettkampfmannschaft', href: '/groups#competition' },
-    { title: 'Fitness-Boxen', href: '/groups#fitness' },
-    { title: 'Frauenboxen', href: '/groups#women' },
-    { title: 'Jugendtraining', href: '/groups#youth' },
     { title: 'Kindertraining', href: '/groups#kids' },
-    { title: 'Anfängertraining', href: '/groups#beginners' },
-    { title: 'Offenes Training', href: '/groups#open' },
+    { title: 'Amateurtraining', href: '/groups#amateur' },
+    { title: 'Profitraining', href: '/groups#pro' },
+    { title: 'Wettkampfmannschaft', href: '/groups#competition' },
   ];
 
   const trainingLinks = [
-    { title: 'Wettkampfmannschaft', href: '/training-times#competition' },
-    { title: 'Fitness-Boxen', href: '/training-times#fitness' },
-    { title: 'Frauenboxen', href: '/training-times#women' },
-    { title: 'Jugendtraining', href: '/training-times#youth' },
     { title: 'Kindertraining', href: '/training-times#kids' },
-    { title: 'Anfängertraining', href: '/training-times#beginners' },
-    { title: 'Offenes Training', href: '/training-times#open' },
+    { title: 'Amateurtraining', href: '/training-times#amateur' },
+    { title: 'Profitraining', href: '/training-times#pro' },
+    { title: 'Wettkampfmannschaft', href: '/training-times#competition' },
   ];
 
   const isActive = (path) => pathname === path;
@@ -85,19 +79,6 @@ const Header = () => {
                       }`}
                     >
                       Home
-                    </Link>
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <NavigationMenuLink asChild>
-                    <Link
-                      href="/news"
-                      className={`text-sm font-medium px-3 py-2 transition-colors hover:text-primary ${
-                        isActive('/news') ? 'text-primary border-b-2 border-primary' : 'text-foreground'
-                      }`}
-                    >
-                      News
                     </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
@@ -169,6 +150,19 @@ const Header = () => {
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild>
                     <Link
+                      href="/faq"
+                      className={`text-sm font-medium px-3 py-2 transition-colors hover:text-primary ${
+                        isActive('/faq') ? 'text-primary border-b-2 border-primary' : 'text-foreground'
+                      }`}
+                    >
+                      FAQ
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link
                       href="/contact"
                       className={`text-sm font-medium px-3 py-2 transition-colors hover:text-primary ${
                         isActive('/contact') ? 'text-primary border-b-2 border-primary' : 'text-foreground'
@@ -199,16 +193,6 @@ const Header = () => {
                   }`}
                 >
                   Home
-                </Link>
-
-                <Link
-                  href="/news"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`text-lg font-medium transition-colors hover:text-primary ${
-                    isActive('/news') ? 'text-primary' : 'text-foreground'
-                  }`}
-                >
-                  News
                 </Link>
 
                 <Collapsible>
@@ -276,6 +260,16 @@ const Header = () => {
                   }`}
                 >
                   Fotos
+                </Link>
+
+                <Link
+                  href="/faq"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-lg font-medium transition-colors hover:text-primary ${
+                    isActive('/faq') ? 'text-primary' : 'text-foreground'
+                  }`}
+                >
+                  FAQ
                 </Link>
 
                 <Link

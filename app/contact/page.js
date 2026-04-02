@@ -19,6 +19,20 @@ export default function ContactPage() {
             Haben Sie Fragen oder möchten Sie ein Probetraining vereinbaren? Kontaktieren Sie uns – wir freuen uns auf Ihre Nachricht!
           </p>
 
+          {/* Der Weg zum Club – YouTube Video */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold mb-4">Der Weg zum Club</h2>
+            <p className="text-muted-foreground mb-6">
+              Noch nie bei uns gewesen? Dieses Video zeigt dir den Weg vom Parkplatz direkt zu unserem Boxclub.
+            </p>
+            <div className="aspect-video bg-muted rounded-xl overflow-hidden border border-border">
+              {/* TODO: YouTube Video-ID hier eintragen – z.B. src="https://www.youtube.com/embed/DEINE_VIDEO_ID" */}
+              <div className="w-full h-full flex items-center justify-center text-muted-foreground text-sm">
+                Video folgt – YouTube-Link wird hier eingebettet
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="space-y-8">
               <Card className="bg-card text-card-foreground border-border">
@@ -34,7 +48,7 @@ export default function ContactPage() {
                       <h3 className="font-semibold mb-1">Adresse</h3>
                       <p className="text-muted-foreground">
                         KSL Boxing Lahr<br />
-                        Musterstraße 123<br />
+                        Dinglingerhauptstr. 87<br />
                         77933 Lahr/Schwarzwald
                       </p>
                     </div>
@@ -83,7 +97,7 @@ export default function ContactPage() {
                 <CardContent>
                   <div className="aspect-video bg-muted rounded-lg overflow-hidden">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42396.89076538!2d7.8743!3d48.3394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47911b8f5e64c3e5%3A0x41f6bb7a5df57b0!2sLahr%2FSchwarzwald!5e0!3m2!1sde!2sde!4v1234567890"
+                      src="https://maps.google.com/maps?q=Dinglingerhauptstr.+87,+77933+Lahr&t=&z=16&ie=UTF8&iwloc=&output=embed"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
