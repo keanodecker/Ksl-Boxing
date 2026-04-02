@@ -10,7 +10,7 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-const FOLDERS = ['public/club-fotos', 'public/kindertraining', 'public/galerie'];
+const FOLDERS = ['public/club-fotos', 'public/kindertraining', 'public/galerie', 'public/geschichte'];
 const MAX_WIDTH = 1600;
 const QUALITY = 75;
 const SKIP_BELOW_KB = 600;
