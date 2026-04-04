@@ -181,7 +181,7 @@ export default function HomePage() {
               Athleten, die den Namen KSL Boxing Lahr in die Geschichtsbücher geschrieben haben.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mb-12">
               {/* Card 1 – Sezer Ülker */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -206,7 +206,7 @@ export default function HomePage() {
                   </CardHeader>
                   <CardContent className="flex-grow flex flex-col gap-4">
                     <p className="text-muted-foreground leading-relaxed">
-                      2015 erkämpfte er sich vor über 700 Zuschauern im Lahrer Hallensportzentrum den I.B.F. Europameistertitel im Schwergewicht durch K.o. in Runde 2. Ungeschlagen in allen 5 Profikämpfen. Mitgründer von KSL Boxing im Jahr 2004.
+                      2015 erkämpfte er sich vor über 700 Zuschauern im Lahrer Hallensportzentrum den I.B.F. Europameistertitel im Schwergewicht durch K.o. in Runde 2. Ungeschlagen in allen 5 Profikämpfen. Gründer von KSL Boxing Lahr im Jahr 2004.
                     </p>
                     <div className="mt-auto pt-4 border-t border-border">
                       <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">
@@ -221,7 +221,44 @@ export default function HomePage() {
                 </Card>
               </motion.div>
 
-              {/* Card 2 – Belkijan Kaleshiq */}
+              {/* Card 2 – Labinot Xhoxhaj */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="h-full"
+              >
+                <Card className="bg-card text-card-foreground border-border h-full flex flex-col">
+                  <CardHeader>
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Trophy className="w-6 h-6 text-primary-foreground" />
+                      </div>
+                      <Badge className="bg-primary text-primary-foreground text-xs font-bold tracking-wider uppercase">
+                        EUROPAMEISTER
+                      </Badge>
+                    </div>
+                    <CardTitle className="text-2xl font-bold">Labinot Xhoxhaj</CardTitle>
+                    <p className="text-sm text-primary font-medium">EBU Europameister Schwergewicht</p>
+                  </CardHeader>
+                  <CardContent className="flex-grow flex flex-col gap-4">
+                    <p className="text-muted-foreground leading-relaxed">
+                      Am 23. November 2024 erkämpfte er den EBU Europameistertitel im Schwergewicht. Ungeschlagen mit 22 Kämpfen (17 K.o.-Siege), zuletzt Titelverteidigung im Februar 2026 in Lahr. Aktuell auf Platz 25 der Weltrangliste im Schwergewicht.
+                    </p>
+                    <div className="mt-auto pt-4 border-t border-border">
+                      <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">
+                        <span className="flex items-center gap-1"><span className="text-primary font-bold">22</span> Kämpfe</span>
+                        <span className="text-border">·</span>
+                        <span className="flex items-center gap-1"><span className="text-primary font-bold">17</span> K.o.-Siege</span>
+                        <span className="text-border">·</span>
+                        <span className="text-primary font-semibold">EBU Europameister</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              {/* Card 3 – Belkijan Kaleshiq */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -258,11 +295,11 @@ export default function HomePage() {
                 </Card>
               </motion.div>
 
-              {/* Card 3 – Nachwuchs */}
+              {/* Card 4 – Nachwuchs */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
                 className="h-full"
               >
                 <Card className="bg-card text-card-foreground border-border h-full flex flex-col">
