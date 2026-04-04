@@ -386,11 +386,11 @@ export default function HomePage() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/logo-welcome.svg"
+                src="/logo-welcome.webp"
                 alt="KSL Boxing Lahr"
-                width={256}
-                height={256}
-                className="rounded-2xl shadow-lg"
+                width={320}
+                height={320}
+                className="drop-shadow-2xl"
               />
             </motion.div>
             <motion.div
