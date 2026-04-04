@@ -385,10 +385,10 @@ export default function HomePage() {
               className="flex justify-center"
             >
               <Image
-                src="/logo.webp"
+                src="/logo-hires.webp"
                 alt="KSL Boxing Lahr"
-                width={130}
-                height={130}
+                width={256}
+                height={256}
                 className="rounded-2xl shadow-lg"
               />
             </motion.div>
