@@ -25,6 +25,16 @@ const faqs = [
       'Ganz einfach: Schreib uns über das Kontaktformular auf unserer Kontaktseite oder ruf uns direkt an. Das Probetraining ist kostenlos und du brauchst keine Vorerfahrung – komm einfach vorbei!',
   },
   {
+    question: 'Brauche ich Vorkenntnisse?',
+    answer:
+      'Nein, bei uns sind Anfänger herzlich willkommen. Unsere Trainer holen jeden dort ab, wo er steht – egal ob du noch nie einen Boxhandschuh angefasst hast oder schon erste Erfahrungen mitbringst.',
+  },
+  {
+    question: 'Wie oft sollte ich trainieren?',
+    answer:
+      'Wir empfehlen mindestens 2–3 Trainingseinheiten pro Woche für optimale Fortschritte. Natürlich kannst du auch öfter kommen – je nach Gruppe und persönlichem Ziel.',
+  },
+  {
     question: 'Ab welchem Alter kann man bei KSL Boxing trainieren?',
     answer:
       'Wir bieten Trainingsgruppen ab ca. 6 Jahren an. Im Kindertraining lernen die Kleinsten spielerisch die Grundlagen. Für Jugendliche und Erwachsene gibt es eigene Gruppen – von Anfänger bis Wettkampf.',

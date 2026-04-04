@@ -25,7 +25,6 @@ const Header = () => {
     { title: 'Leitbild', href: '/club#mission' },
     { title: 'Philosophie', href: '/club#philosophy' },
     { title: 'Mitgliedschaft', href: '/club#membership' },
-    { title: 'FAQ', href: '/club#faq' },
     { title: 'Verhaltenskodex', href: '/club#code' },
     { title: 'Trainer', href: '/club#coaches' },
     { title: 'Vorstand', href: '/club#board' },
