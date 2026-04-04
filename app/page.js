@@ -384,8 +384,9 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               className="flex justify-center"
             >
-              <Image
-                src="/logo-hires.webp"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo-hires.svg"
                 alt="KSL Boxing Lahr"
                 width={256}
                 height={256}
