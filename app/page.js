@@ -385,7 +385,7 @@ export default function HomePage() {
               className="flex justify-center"
             >
               <Image
-                src="/logo.webp"
+                src="/logo-hires.webp"
                 alt="KSL Boxing Lahr"
                 width={256}
                 height={256}
