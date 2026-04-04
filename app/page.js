@@ -390,7 +390,7 @@ export default function HomePage() {
                 alt="KSL Boxing Lahr"
                 width={256}
                 height={256}
-                className="rounded-2xl shadow-lg"
+                className="drop-shadow-lg"
               />
             </motion.div>
             <motion.div
