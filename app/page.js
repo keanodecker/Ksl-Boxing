@@ -386,7 +386,7 @@ export default function HomePage() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/logo-welcome.webp"
+                src="/logo-welcome.svg"
                 alt="KSL Boxing Lahr"
                 width={320}
                 height={320}
