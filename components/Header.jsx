@@ -27,21 +27,20 @@ const Header = () => {
     { title: 'Mitgliedschaft', href: '/club#membership' },
     { title: 'Verhaltenskodex', href: '/club#code' },
     { title: 'Trainer', href: '/club#coaches' },
-    { title: 'Vorstand', href: '/club#board' },
   ];
 
   const groupLinks = [
-    { title: 'Kindertraining', href: '/groups#kids' },
-    { title: 'Amateurtraining', href: '/groups#amateur' },
-    { title: 'Profitraining', href: '/groups#pro' },
-    { title: 'Wettkampfmannschaft', href: '/groups#competition' },
+    { title: 'Anfängertraining & Kindertraining', href: '/groups#beginners' },
+    { title: 'Manager Fitnessboxen', href: '/groups#fitness' },
+    { title: 'Fortgeschrittene & Wettkampf', href: '/groups#advanced' },
+    { title: 'Frauenboxen', href: '/groups#women' },
   ];
 
   const trainingLinks = [
-    { title: 'Kindertraining', href: '/training-times#kids' },
-    { title: 'Amateurtraining', href: '/training-times#amateur' },
-    { title: 'Profitraining', href: '/training-times#pro' },
-    { title: 'Wettkampfmannschaft', href: '/training-times#competition' },
+    { title: 'Anfängertraining & Kindertraining', href: '/training-times#beginners' },
+    { title: 'Manager Fitnessboxen', href: '/training-times#fitness' },
+    { title: 'Fortgeschrittene & Wettkampf', href: '/training-times#advanced' },
+    { title: 'Frauenboxen', href: '/training-times#women' },
   ];
 
   const isActive = (path) => pathname === path;
