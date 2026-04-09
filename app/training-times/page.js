@@ -15,15 +15,6 @@ export default function TrainingTimesPage() {
       ]
     },
     {
-      id: 'fitnessboxen',
-      group: 'Fitnessboxen',
-      note: 'Ab 14 Jahren · alle Altersgruppen',
-      schedule: [
-        { day: 'Montag',   time: '18:00 - 19:00 Uhr' },
-        { day: 'Mittwoch', time: '18:00 - 19:00 Uhr' },
-      ]
-    },
-    {
       id: 'fitness',
       group: 'Manager Fitnessboxen',
       note: 'Ab 40 Jahren',
@@ -41,6 +32,15 @@ export default function TrainingTimesPage() {
         { day: 'Mittwoch',   time: '19:00 - 20:30 Uhr' },
         { day: 'Donnerstag', time: '19:00 - 20:30 Uhr' },
         { day: 'Freitag',    time: '19:00 - 20:30 Uhr' },
+      ]
+    },
+    {
+      id: 'fitnessboxen',
+      group: 'Fitnessboxen',
+      note: 'Ab 14 Jahren · alle Altersgruppen',
+      schedule: [
+        { day: 'Montag',   time: '18:00 - 19:00 Uhr' },
+        { day: 'Mittwoch', time: '18:00 - 19:00 Uhr' },
       ]
     },
     {
