@@ -95,6 +95,13 @@ export default function HomePage() {
     },
     {
       image: 'https://images.unsplash.com/photo-1697240666845-6095e2425870',
+      name: 'Fitnessboxen',
+      description: 'Für alle ab 14 Jahren – jung oder alt, Anfänger oder erfahren. Effektives Ganzkörpertraining ohne Wettkampfambitionen. Mo & Mi · 18:00–19:00 Uhr.',
+      detailsLink: '/groups#fitnessboxen',
+      timesLink: '/training-times#fitnessboxen'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1679500683809-35c8236381b6',
       name: 'Manager Fitnessboxen',
       description: 'Training ab 40 Jahren – egal ob Profi, Amateur, Ex-Profi oder Anfänger. Effektives Ganzkörpertraining in entspannter Atmosphäre. Di · 18:00–19:15 Uhr.',
       detailsLink: '/groups#fitness',
@@ -389,7 +396,7 @@ export default function HomePage() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Unsere Trainingsgruppen</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {trainingGroups.map((group, index) => (
                 <GroupCard key={index} {...group} index={index} />
               ))}
