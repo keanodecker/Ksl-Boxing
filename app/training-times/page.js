@@ -6,66 +6,41 @@ import TrainingTimeTable from '@/components/TrainingTimeTable';
 export default function TrainingTimesPage() {
   const schedules = [
     {
-      id: 'competition',
-      group: 'Wettkampfmannschaft',
+      id: 'beginners',
+      group: 'Anfängertraining & Kindertraining',
+      note: 'Kindertraining ab 7 Jahren · Anfänger',
       schedule: [
-        { day: 'Montag', time: '18:00 - 20:00 Uhr' },
-        { day: 'Mittwoch', time: '18:00 - 20:00 Uhr' },
-        { day: 'Freitag', time: '18:00 - 20:00 Uhr' },
-        { day: 'Samstag', time: '10:00 - 12:00 Uhr', note: 'Sparring' }
+        { day: 'Montag',   time: '17:30 - 18:30 Uhr' },
+        { day: 'Mittwoch', time: '17:30 - 18:30 Uhr' },
       ]
     },
     {
       id: 'fitness',
-      group: 'Fitness-Boxen',
+      group: 'Manager Fitnessboxen',
+      note: 'Ab 40 Jahren',
       schedule: [
-        { day: 'Dienstag', time: '19:00 - 20:30 Uhr' },
+        { day: 'Dienstag', time: '18:00 - 19:15 Uhr' },
+      ]
+    },
+    {
+      id: 'advanced',
+      group: 'Wettkampftraining',
+      note: 'Profi- und Amateurboxen · Wettkampfvorbereitung',
+      schedule: [
+        { day: 'Montag',     time: '19:00 - 20:30 Uhr' },
+        { day: 'Dienstag',   time: '19:00 - 20:30 Uhr' },
+        { day: 'Mittwoch',   time: '19:00 - 20:30 Uhr' },
         { day: 'Donnerstag', time: '19:00 - 20:30 Uhr' },
-        { day: 'Samstag', time: '09:00 - 10:30 Uhr' }
+        { day: 'Freitag',    time: '19:00 - 20:30 Uhr' },
       ]
     },
     {
       id: 'women',
       group: 'Frauenboxen',
       schedule: [
-        { day: 'Dienstag', time: '18:00 - 19:30 Uhr' },
-        { day: 'Donnerstag', time: '18:00 - 19:30 Uhr' }
+        { day: 'Dienstag', time: '18:00 - 19:00 Uhr' },
       ]
     },
-    {
-      id: 'youth',
-      group: 'Jugendtraining',
-      schedule: [
-        { day: 'Montag', time: '16:30 - 18:00 Uhr' },
-        { day: 'Mittwoch', time: '16:30 - 18:00 Uhr' },
-        { day: 'Freitag', time: '16:30 - 18:00 Uhr' }
-      ]
-    },
-    {
-      id: 'kids',
-      group: 'Kindertraining',
-      schedule: [
-        { day: 'Dienstag', time: '16:00 - 17:00 Uhr' },
-        { day: 'Donnerstag', time: '16:00 - 17:00 Uhr' }
-      ]
-    },
-    {
-      id: 'beginners',
-      group: 'Anfängertraining',
-      schedule: [
-        { day: 'Montag', time: '19:00 - 20:30 Uhr' },
-        { day: 'Mittwoch', time: '19:00 - 20:30 Uhr' }
-      ]
-    },
-    {
-      id: 'open',
-      group: 'Offenes Training',
-      schedule: [
-        { day: 'Dienstag', time: '20:30 - 22:00 Uhr' },
-        { day: 'Donnerstag', time: '20:30 - 22:00 Uhr' },
-        { day: 'Samstag', time: '14:00 - 16:00 Uhr' }
-      ]
-    }
   ];
 
   return (
@@ -78,7 +53,7 @@ export default function TrainingTimesPage() {
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Trainingszeiten</h1>
           <p className="text-xl text-muted-foreground mb-16 leading-relaxed max-w-3xl">
-            Hier finden Sie eine Übersicht aller Trainingszeiten. Bitte beachten Sie, dass sich Zeiten ändern können. Bei Fragen kontaktieren Sie uns gerne.
+            Hier findest du eine Übersicht aller Trainingszeiten. Bei Fragen kontaktiere uns gerne.
           </p>
 
           <div className="space-y-8">
@@ -99,7 +74,7 @@ export default function TrainingTimesPage() {
             <ul className="space-y-3 text-lg text-secondary-foreground">
               <li className="flex items-start gap-2">
                 <span className="text-primary font-bold mt-1">•</span>
-                <span>Bitte erscheinen Sie 10 Minuten vor Trainingsbeginn, um sich umzuziehen und aufzuwärmen.</span>
+                <span>Bitte erscheine 10 Minuten vor Trainingsbeginn, um dich umzuziehen und aufzuwärmen.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary font-bold mt-1">•</span>
@@ -108,10 +83,6 @@ export default function TrainingTimesPage() {
               <li className="flex items-start gap-2">
                 <span className="text-primary font-bold mt-1">•</span>
                 <span>Probetraining ist nach vorheriger Anmeldung jederzeit möglich.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary font-bold mt-1">•</span>
-                <span>Bei Krankheit oder Verletzung bitte vor dem Training mit dem Trainer sprechen.</span>
               </li>
             </ul>
           </motion.div>

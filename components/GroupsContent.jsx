@@ -4,38 +4,56 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
-import { Trophy, Dumbbell, Users, Zap, Smile, GraduationCap, Clock, Play, X } from 'lucide-react';
+import { Dumbbell, Users, GraduationCap, Trophy, Play, X } from 'lucide-react';
 
 const groups = [
   {
-    id: 'competition',
-    icon: Trophy,
-    name: 'Wettkampfmannschaft',
-    description: 'Für ambitionierte Boxer mit Wettkampferfahrung oder dem Ziel, an Wettkämpfen teilzunehmen.',
+    id: 'beginners',
+    icon: GraduationCap,
+    name: 'Anfängertraining & Kindertraining',
+    description: 'Kindertraining ab 7 Jahren und Anfängertraining – spielerisch und strukturiert in die Welt des Boxens einsteigen.',
     details: [
-      'Intensives technisches Training',
-      'Taktische Schulung und Ringpsychologie',
-      'Sparring mit erfahrenen Partnern',
-      'Individuelle Wettkampfvorbereitung',
-      'Teilnahme an regionalen und überregionalen Turnieren',
-      'Videoanalyse und Leistungsdiagnostik',
+      'Kindertraining ab 7 Jahren',
+      'Spielerische Vermittlung der Grundtechniken',
+      'Koordinations- und Bewegungsübungen',
+      'Förderung von Konzentration und Disziplin',
+      'Systematischer Aufbau der Grundlagen für Anfänger',
+      'Kein Vollkontakt-Sparring',
     ],
-    requirements: 'Mindestalter 16 Jahre, Boxerpass erforderlich, ärztliche Untersuchung',
+    requirements: 'Ab 7 Jahren – Einverständnis der Erziehungsberechtigten für Minderjährige',
+    schedule: 'Mo & Mi · 17:30 – 18:30 Uhr',
   },
   {
     id: 'fitness',
     icon: Dumbbell,
-    name: 'Fitness-Boxen',
-    description: 'Effektives Ganzkörpertraining ohne Wettkampfambitionen. Perfekt für Fitness und Gesundheit.',
+    name: 'Manager Fitnessboxen',
+    description: 'Training ab 40 Jahren – egal ob Profi, Amateur, Ex-Profi oder absoluter Anfänger. Effektives Ganzkörpertraining in entspannter Atmosphäre.',
     details: [
       'Cardio-Training an Sandsack und Pratzen',
-      'Krafttraining mit eigenem Körpergewicht',
-      'Koordinations- und Schnelligkeitsübungen',
-      'Techniktraining ohne Vollkontakt',
+      'Kraft- und Ausdauertraining',
+      'Technisches Boxtraining ohne Vollkontakt',
       'Stressabbau und mentale Stärke',
-      'Für alle Fitnesslevel geeignet',
+      'Kleine Gruppen für individuelle Betreuung',
+      'Perfekt für Fitness und Gesundheit',
     ],
-    requirements: 'Keine Vorkenntnisse erforderlich, ab 16 Jahren',
+    requirements: 'Ab 40 Jahren, keine Vorkenntnisse erforderlich',
+    schedule: 'Di · 18:00 – 19:15 Uhr',
+  },
+  {
+    id: 'advanced',
+    icon: Trophy,
+    name: 'Wettkampftraining',
+    description: 'Profi- und Amateurtraining für Wettkämpfer. Intensives Training auf hohem Niveau mit erfahrenen Trainern.',
+    details: [
+      'Profi- und Amateurboxen',
+      'Intensives technisches und taktisches Training',
+      'Sparring mit erfahrenen Partnern',
+      'Ringpsychologie und Wettkampfanalyse',
+      'Teilnahme an regionalen und überregionalen Turnieren',
+      'Individuelle Wettkampfvorbereitung',
+    ],
+    requirements: 'Boxerfahrung erforderlich',
+    schedule: 'Mo – Fr · 19:00 – 20:30 Uhr',
   },
   {
     id: 'women',
@@ -50,67 +68,8 @@ const groups = [
       'Stressabbau und Empowerment',
       'Optionale Wettkampfteilnahme möglich',
     ],
-    requirements: 'Keine Vorkenntnisse erforderlich, ab 16 Jahren',
-  },
-  {
-    id: 'youth',
-    icon: Zap,
-    name: 'Jugendtraining',
-    description: 'Für Jugendliche von 13-17 Jahren. Technische Grundlagen und Charakterbildung.',
-    details: [
-      'Altersgerechtes Techniktraining',
-      'Fitness und Koordination',
-      'Förderung von Disziplin und Respekt',
-      'Sparring unter Aufsicht (optional)',
-      'Vorbereitung auf Jugendwettkämpfe',
-      'Soziale Kompetenz und Teamgeist',
-    ],
-    requirements: 'Alter 13-17 Jahre, Einverständnis der Erziehungsberechtigten',
-  },
-  {
-    id: 'kids',
-    icon: Smile,
-    name: 'Kindertraining',
-    description: 'Spielerisches Boxtraining für Kinder von 6-12 Jahren. Spaß und Bewegung stehen im Vordergrund.',
-    details: [
-      'Spielerische Vermittlung der Grundtechniken',
-      'Koordinations- und Bewegungsspiele',
-      'Förderung von Konzentration und Disziplin',
-      'Soziales Lernen in der Gruppe',
-      'Kein Vollkontakt-Sparring',
-      'Spaß und Freude an der Bewegung',
-    ],
-    requirements: 'Alter 6-12 Jahre, Einverständnis der Erziehungsberechtigten',
-  },
-  {
-    id: 'beginners',
-    icon: GraduationCap,
-    name: 'Anfängertraining',
-    description: 'Perfekt für Einsteiger ohne Vorkenntnisse. Grundlagen des Boxens in entspannter Atmosphäre.',
-    details: [
-      'Systematischer Aufbau der Grundtechniken',
-      'Beinarbeit und Distanzgefühl',
-      'Sanfter Einstieg ins Sparring',
-      'Fitness und Konditionsaufbau',
-      'Individuelle Betreuung durch erfahrene Trainer',
-      'Übergang in andere Gruppen möglich',
-    ],
-    requirements: 'Keine Vorkenntnisse erforderlich, ab 16 Jahren',
-  },
-  {
-    id: 'open',
-    icon: Clock,
-    name: 'Offenes Training',
-    description: 'Freies Training für erfahrene Boxer. Selbstständiges Arbeiten unter Aufsicht.',
-    details: [
-      'Freie Zeiteinteilung und Trainingsgestaltung',
-      'Zugang zu allen Trainingsgeräten',
-      'Sparring nach Absprache',
-      'Trainer als Ansprechpartner vor Ort',
-      'Für selbstständige Athleten',
-      'Ergänzung zum regulären Training',
-    ],
-    requirements: 'Mindestens 1 Jahr Boxerfahrung, Mitgliedschaft erforderlich',
+    requirements: 'Keine Vorkenntnisse erforderlich',
+    schedule: 'Di · 18:00 – 19:00 Uhr',
   },
 ];
 
@@ -188,7 +147,7 @@ export default function GroupsContent({ kidsPhotos = [], kidsVideos = [] }) {
                   </Card>
 
                   {/* Kindertraining Fotos & Videos */}
-                  {group.id === 'kids' && (kidsPhotos.length > 0 || kidsVideos.length > 0) && (
+                  {group.id === 'beginners' && (kidsPhotos.length > 0 || kidsVideos.length > 0) && (
                     <div className="mt-8">
                       <h3 className="text-xl font-semibold mb-4">Impressionen aus dem Kindertraining</h3>
                       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
