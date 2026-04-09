@@ -94,13 +94,6 @@ export default function HomePage() {
       timesLink: '/training-times#beginners'
     },
     {
-      image: 'https://images.unsplash.com/photo-1697240666845-6095e2425870',
-      name: 'Fitnessboxen',
-      description: 'Für alle ab 14 Jahren – jung oder alt, Anfänger oder erfahren. Effektives Ganzkörpertraining ohne Wettkampfambitionen. Mo & Mi · 18:00–19:00 Uhr.',
-      detailsLink: '/groups#fitnessboxen',
-      timesLink: '/training-times#fitnessboxen'
-    },
-    {
       image: 'https://images.unsplash.com/photo-1679500683809-35c8236381b6',
       name: 'Manager Fitnessboxen',
       description: 'Training ab 40 Jahren – egal ob Profi, Amateur, Ex-Profi oder Anfänger. Effektives Ganzkörpertraining in entspannter Atmosphäre. Di · 18:00–19:15 Uhr.',
@@ -113,6 +106,13 @@ export default function HomePage() {
       description: 'Profi- und Amateurboxen für Wettkämpfer. Intensives Training auf hohem Niveau mit erfahrenen Trainern. Mo–Fr · 19:00–20:30 Uhr.',
       detailsLink: '/groups#advanced',
       timesLink: '/training-times#advanced'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1697240666845-6095e2425870',
+      name: 'Fitnessboxen',
+      description: 'Für alle ab 14 Jahren – jung oder alt, Anfänger oder erfahren. Effektives Ganzkörpertraining ohne Wettkampfambitionen. Mo & Mi · 18:00–19:00 Uhr.',
+      detailsLink: '/groups#fitnessboxen',
+      timesLink: '/training-times#fitnessboxen'
     },
     {
       image: 'https://images.unsplash.com/photo-1517438322307-e67111335449',
