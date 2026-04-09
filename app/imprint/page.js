@@ -26,13 +26,12 @@ export default function ImprintPage() {
               </div>
               <div>
                 <p className="font-semibold">Vertreten durch:</p>
-                <p className="text-muted-foreground">[Name 1. Vorsitzender eintragen]</p>
-                <p className="text-muted-foreground">[Name 2. Vorsitzender eintragen]</p>
+                <p className="text-muted-foreground">Sezer Ülker (1. Vorsitzender)</p>
               </div>
               <div>
                 <p className="font-semibold">Kontakt:</p>
-                <p className="text-muted-foreground">Telefon: [Telefonnummer eintragen]</p>
-                <p className="text-muted-foreground">E-Mail: [E-Mail-Adresse eintragen]</p>
+                <p className="text-muted-foreground">Telefon: (+49) 7821 / 502 09 62</p>
+                <p className="text-muted-foreground">E-Mail: info@ksl-boxing-lahr.de</p>
               </div>
               <div>
                 <p className="font-semibold">Registereintrag:</p>
