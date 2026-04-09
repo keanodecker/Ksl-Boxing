@@ -27,7 +27,7 @@ const groups = [
     id: 'fitness',
     icon: Dumbbell,
     name: 'Manager Fitnessboxen',
-    description: 'Speziell für Einsteiger ab 40 Jahren. Effektives Ganzkörpertraining ohne Wettkampfambitionen.',
+    description: 'Training ab 40 Jahren – egal ob Profi, Amateur, Ex-Profi oder absoluter Anfänger. Effektives Ganzkörpertraining in entspannter Atmosphäre.',
     details: [
       'Cardio-Training an Sandsack und Pratzen',
       'Kraft- und Ausdauertraining',
@@ -42,15 +42,15 @@ const groups = [
   {
     id: 'advanced',
     icon: Trophy,
-    name: 'Fortgeschrittene & Wettkampftraining',
-    description: 'Amateurboxen für Fortgeschrittene und Wettkämpfer. Intensives Training auf hohem Niveau.',
+    name: 'Wettkampftraining',
+    description: 'Profi- und Amateurtraining für Wettkämpfer. Intensives Training auf hohem Niveau mit erfahrenen Trainern.',
     details: [
-      'Amateurboxen und Wettkampfvorbereitung',
+      'Profi- und Amateurboxen',
       'Intensives technisches und taktisches Training',
       'Sparring mit erfahrenen Partnern',
       'Ringpsychologie und Wettkampfanalyse',
       'Teilnahme an regionalen und überregionalen Turnieren',
-      'Training für Fortgeschrittene und Amateure',
+      'Individuelle Wettkampfvorbereitung',
     ],
     requirements: 'Boxerfahrung erforderlich',
     schedule: 'Mo – Fr · 19:00 – 20:30 Uhr',
@@ -69,7 +69,7 @@ const groups = [
       'Optionale Wettkampfteilnahme möglich',
     ],
     requirements: 'Keine Vorkenntnisse erforderlich',
-    schedule: 'Do · 18:00 – 19:00 Uhr',
+    schedule: 'Di · 18:00 – 19:00 Uhr',
   },
 ];
 

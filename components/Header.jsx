@@ -32,14 +32,14 @@ const Header = () => {
   const groupLinks = [
     { title: 'Anfängertraining & Kindertraining', href: '/groups#beginners' },
     { title: 'Manager Fitnessboxen', href: '/groups#fitness' },
-    { title: 'Fortgeschrittene & Wettkampf', href: '/groups#advanced' },
+    { title: 'Wettkampftraining', href: '/groups#advanced' },
     { title: 'Frauenboxen', href: '/groups#women' },
   ];
 
   const trainingLinks = [
     { title: 'Anfängertraining & Kindertraining', href: '/training-times#beginners' },
     { title: 'Manager Fitnessboxen', href: '/training-times#fitness' },
-    { title: 'Fortgeschrittene & Wettkampf', href: '/training-times#advanced' },
+    { title: 'Wettkampftraining', href: '/training-times#advanced' },
     { title: 'Frauenboxen', href: '/training-times#women' },
   ];
 

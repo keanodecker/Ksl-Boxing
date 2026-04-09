@@ -206,15 +206,15 @@ export default function HomePage() {
                   </CardHeader>
                   <CardContent className="flex-grow flex flex-col gap-4">
                     <p className="text-muted-foreground leading-relaxed">
-                      2015 erkämpfte er sich vor über 700 Zuschauern im Lahrer Hallensportzentrum den I.B.F. Europameistertitel im Schwergewicht durch K.o. in Runde 2. Ungeschlagen in allen 5 Profikämpfen. Gründer von KSL Boxing Lahr im Jahr 2004.
+                      1× Europameister (I.B.F. Schwergewicht, 2015), mehrfacher Landesmeister und Gründer von KSL Boxing Lahr – mit über 30 Jahren Erfahrung im Boxsport gibt Sezer „Cesar" Ülker heute sein Wissen als Trainer und Clubchef an die nächste Generation weiter.
                     </p>
                     <div className="mt-auto pt-4 border-t border-border">
                       <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">
-                        <span className="flex items-center gap-1"><span className="text-primary font-bold">5</span> Profikämpfe</span>
-                        <span className="text-border">·</span>
-                        <span className="flex items-center gap-1"><span className="text-primary font-bold">5</span> Siege</span>
+                        <span className="flex items-center gap-1"><span className="text-primary font-bold">30+</span> Jahre Erfahrung</span>
                         <span className="text-border">·</span>
                         <span className="text-primary font-semibold">Europameister I.B.F.</span>
+                        <span className="text-border">·</span>
+                        <span className="text-primary font-semibold">Mehrfacher Landesmeister</span>
                       </div>
                     </div>
                   </CardContent>

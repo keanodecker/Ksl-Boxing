@@ -24,8 +24,8 @@ export default function TrainingTimesPage() {
     },
     {
       id: 'advanced',
-      group: 'Fortgeschrittene & Wettkampftraining',
-      note: 'Amateurboxen · Fortgeschrittene · Wettkampfvorbereitung',
+      group: 'Wettkampftraining',
+      note: 'Profi- und Amateurboxen · Wettkampfvorbereitung',
       schedule: [
         { day: 'Montag',     time: '19:00 - 20:30 Uhr' },
         { day: 'Dienstag',   time: '19:00 - 20:30 Uhr' },
@@ -38,7 +38,7 @@ export default function TrainingTimesPage() {
       id: 'women',
       group: 'Frauenboxen',
       schedule: [
-        { day: 'Donnerstag', time: '18:00 - 19:00 Uhr' },
+        { day: 'Dienstag', time: '18:00 - 19:00 Uhr' },
       ]
     },
   ];
