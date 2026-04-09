@@ -37,7 +37,7 @@ const faqs = [
   {
     question: 'Ab welchem Alter kann man bei KSL Boxing trainieren?',
     answer:
-      'Wir bieten Trainingsgruppen ab ca. 6 Jahren an. Im Kindertraining lernen die Kleinsten spielerisch die Grundlagen. Für Jugendliche und Erwachsene gibt es eigene Gruppen – von Anfänger bis Wettkampf.',
+      'Wir bieten Trainingsgruppen ab 7 Jahren an. Im Kindertraining lernen die Kleinsten spielerisch die Grundlagen. Für Jugendliche und Erwachsene gibt es eigene Gruppen – von Anfänger bis Wettkampf.',
   },
   {
     question: 'Was muss ich zum ersten Training mitbringen?',

@@ -24,6 +24,22 @@ const groups = [
     schedule: 'Mo & Mi · 17:30 – 18:30 Uhr',
   },
   {
+    id: 'fitnessboxen',
+    icon: Dumbbell,
+    name: 'Fitnessboxen',
+    description: 'Boxtraining für alle ab 14 Jahren – jung oder alt, Anfänger oder erfahren. Effektives Ganzkörpertraining ohne Wettkampfambitionen.',
+    details: [
+      'Ab 14 Jahren, jedes Alter willkommen',
+      'Cardio-Training an Sandsack und Pratzen',
+      'Kraft- und Ausdauertraining',
+      'Technisches Boxtraining ohne Vollkontakt',
+      'Stressabbau und mentale Stärke',
+      'Keine Vorkenntnisse erforderlich',
+    ],
+    requirements: 'Ab 14 Jahren, keine Vorkenntnisse erforderlich',
+    schedule: 'Mo & Mi · 18:00 – 19:00 Uhr',
+  },
+  {
     id: 'fitness',
     icon: Dumbbell,
     name: 'Manager Fitnessboxen',

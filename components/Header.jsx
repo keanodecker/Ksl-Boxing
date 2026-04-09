@@ -31,6 +31,7 @@ const Header = () => {
 
   const groupLinks = [
     { title: 'Anfängertraining & Kindertraining', href: '/groups#beginners' },
+    { title: 'Fitnessboxen', href: '/groups#fitnessboxen' },
     { title: 'Manager Fitnessboxen', href: '/groups#fitness' },
     { title: 'Wettkampftraining', href: '/groups#advanced' },
     { title: 'Frauenboxen', href: '/groups#women' },
@@ -38,6 +39,7 @@ const Header = () => {
 
   const trainingLinks = [
     { title: 'Anfängertraining & Kindertraining', href: '/training-times#beginners' },
+    { title: 'Fitnessboxen', href: '/training-times#fitnessboxen' },
     { title: 'Manager Fitnessboxen', href: '/training-times#fitness' },
     { title: 'Wettkampftraining', href: '/training-times#advanced' },
     { title: 'Frauenboxen', href: '/training-times#women' },
