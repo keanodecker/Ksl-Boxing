@@ -87,47 +87,33 @@ export default function HomePage() {
 
   const trainingGroups = [
     {
-      image: 'https://images.unsplash.com/photo-1679500683809-35c8236381b6',
-      name: 'Wettkampfmannschaft',
-      description: 'Intensives Training für ambitionierte Boxer mit Wettkampferfahrung. Technische Perfektion und taktische Schulung stehen im Vordergrund.',
-      detailsLink: '/groups#competition',
-      timesLink: '/training-times#competition'
+      image: 'https://images.unsplash.com/photo-1593352217070-4900df41715b',
+      name: 'Anfängertraining & Kindertraining',
+      description: 'Kindertraining ab 7 Jahren und Anfängertraining – spielerisch und strukturiert in die Welt des Boxens einsteigen. Mo & Mi · 17:30–18:30 Uhr.',
+      detailsLink: '/groups#beginners',
+      timesLink: '/training-times#beginners'
     },
     {
       image: 'https://images.unsplash.com/photo-1697240666845-6095e2425870',
-      name: 'Fitness-Boxen',
-      description: 'Effektives Ganzkörpertraining ohne Wettkampfambitionen. Verbessere Ausdauer, Kraft und Koordination in motivierender Gruppenatmosphäre.',
+      name: 'Manager Fitnessboxen',
+      description: 'Training ab 40 Jahren – egal ob Profi, Amateur, Ex-Profi oder Anfänger. Effektives Ganzkörpertraining in entspannter Atmosphäre. Di · 18:00–19:15 Uhr.',
       detailsLink: '/groups#fitness',
       timesLink: '/training-times#fitness'
     },
     {
+      image: 'https://images.unsplash.com/photo-1679500683809-35c8236381b6',
+      name: 'Wettkampftraining',
+      description: 'Profi- und Amateurboxen für Wettkämpfer. Intensives Training auf hohem Niveau mit erfahrenen Trainern. Mo–Fr · 19:00–20:30 Uhr.',
+      detailsLink: '/groups#advanced',
+      timesLink: '/training-times#advanced'
+    },
+    {
       image: 'https://images.unsplash.com/photo-1517438322307-e67111335449',
       name: 'Frauenboxen',
-      description: 'Spezielles Training für Frauen jeden Alters. Selbstverteidigung, Fitness und Selbstbewusstsein in einem sicheren Umfeld.',
+      description: 'Spezielles Training für Frauen in motivierender und unterstützender Atmosphäre. Di · 18:00–19:00 Uhr.',
       detailsLink: '/groups#women',
       timesLink: '/training-times#women'
     },
-    {
-      image: 'https://images.unsplash.com/photo-1617629790501-6df2d6ac9822',
-      name: 'Jugendtraining',
-      description: 'Für Jugendliche von 13-17 Jahren. Technische Grundlagen, Fitness und Charakterbildung durch den Boxsport.',
-      detailsLink: '/groups#youth',
-      timesLink: '/training-times#youth'
-    },
-    {
-      image: 'https://images.unsplash.com/photo-1593352217070-4900df41715b',
-      name: 'Kindertraining',
-      description: 'Spielerisches Boxtraining für Kinder von 6-12 Jahren. Förderung von Koordination, Disziplin und sozialem Verhalten.',
-      detailsLink: '/groups#kids',
-      timesLink: '/training-times#kids'
-    },
-    {
-      image: 'https://images.unsplash.com/photo-1679500683809-35c8236381b6',
-      name: 'Anfängertraining',
-      description: 'Perfekt für Einsteiger ohne Vorkenntnisse. Grundlagen des Boxens in entspannter Atmosphäre mit erfahrenen Trainern.',
-      detailsLink: '/groups#beginners',
-      timesLink: '/training-times#beginners'
-    }
   ];
 
   const testimonials = [
@@ -346,33 +332,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Latest News Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Aktuelle News</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {latestNews.map((news, index) => (
-                <NewsCard key={index} {...news} />
-              ))}
-            </div>
-            <div className="text-center mt-12">
-              <Button
-                size="lg"
-                variant="outline"
-                className="transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:border-primary active:scale-[0.98]"
-                onClick={() => router.push('/news')}
-              >
-                Alle News anzeigen
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* Latest News Section – intentionally empty, content coming soon */}
 
       {/* Welcome Section */}
       <section className="py-20 bg-secondary">
@@ -429,7 +389,7 @@ export default function HomePage() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Unsere Trainingsgruppen</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {trainingGroups.map((group, index) => (
                 <GroupCard key={index} {...group} index={index} />
               ))}
