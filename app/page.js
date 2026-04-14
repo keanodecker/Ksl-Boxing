@@ -32,7 +32,7 @@ export default function HomePage() {
       link: '/groups#fitnessboxen'
     },
     {
-      image: 'https://images.unsplash.com/photo-1638851240443-762225963c29',
+      videoId: 'Wpu4MyfRcys',
       title: 'Anfängertraining & Kindertraining',
       subtitle: 'Spielerisch und strukturiert in die Welt des Boxens einsteigen – ab 7 Jahren',
       buttonText: 'Mehr erfahren',
