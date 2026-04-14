@@ -39,7 +39,7 @@ export default function HomePage() {
       link: '/groups#beginners'
     },
     {
-      image: 'https://images.unsplash.com/photo-1697240666845-6095e2425870',
+      image: '/manager-boxen.jpg',
       title: 'Manager Fitnessboxen',
       subtitle: 'Training ab 40 Jahren – egal ob Profi, Amateur, Ex-Profi oder Anfänger',
       buttonText: 'Mehr erfahren',
@@ -94,7 +94,7 @@ export default function HomePage() {
       timesLink: '/training-times#beginners'
     },
     {
-      image: 'https://images.unsplash.com/photo-1679500683809-35c8236381b6',
+      image: '/manager-boxen.jpg',
       name: 'Manager Fitnessboxen',
       description: 'Training ab 40 Jahren – egal ob Profi, Amateur, Ex-Profi oder Anfänger. Effektives Ganzkörpertraining in entspannter Atmosphäre. Di · 18:00–19:15 Uhr.',
       detailsLink: '/groups#fitness',
