@@ -5,10 +5,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Target, Heart, Users, HelpCircle, Shield, Award, ImageIcon } from 'lucide-react';
 
 const coaches = [
-  { name: 'Sezer Ülker',       role: 'Clubchef · Trainer' },
-  { name: 'Pepe Sanfilippo',   role: 'Trainer' },
-  { name: 'Dan Hoffman',       role: 'Trainer' },
-  { name: 'Marco Gronert',     role: 'Trainer' },
+  { name: 'Sezer Ülker',       role: 'Clubchef · Trainer', photo: '/trainer/sezer-uelker.jpeg' },
+  { name: 'Pepe Sanfilippo',   role: 'Trainer', photo: null },
+  { name: 'Dan Hoffman',       role: 'Trainer', photo: null, noPlaceholder: true },
+  { name: 'Marco Gronert',     role: 'Trainer', photo: null },
 ];
 
 const faqs = [
@@ -194,11 +194,20 @@ export default function ClubPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {coaches.map((coach, index) => (
                     <div key={index} className="flex gap-4 p-5 bg-secondary rounded-lg border border-border">
-                      {/* Foto-Platzhalter */}
-                      <div className="flex-shrink-0 w-24 h-24 rounded-lg bg-muted border border-border flex flex-col items-center justify-center gap-1">
-                        <ImageIcon className="w-7 h-7 text-muted-foreground/50" />
-                        <span className="text-xs text-muted-foreground/50">Foto</span>
-                      </div>
+                      {/* Foto */}
+                      {coach.photo ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={coach.photo}
+                          alt={coach.name}
+                          className="flex-shrink-0 w-24 h-24 rounded-lg object-cover border border-border"
+                        />
+                      ) : !coach.noPlaceholder ? (
+                        <div className="flex-shrink-0 w-24 h-24 rounded-lg bg-muted border border-border flex flex-col items-center justify-center gap-1">
+                          <ImageIcon className="w-7 h-7 text-muted-foreground/50" />
+                          <span className="text-xs text-muted-foreground/50">Foto</span>
+                        </div>
+                      ) : null}
                       {/* Info */}
                       <div className="flex flex-col justify-center">
                         <h3 className="text-lg font-bold">{coach.name}</h3>
