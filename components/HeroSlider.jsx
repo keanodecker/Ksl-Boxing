@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -9,6 +9,7 @@ import { motion } from 'framer-motion';
 const HeroSlider = ({ slides }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const isHoveredRef = useRef(false);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -34,12 +35,10 @@ const HeroSlider = ({ slides }) => {
     emblaApi.on('reInit', onSelect);
 
     const autoplay = setInterval(() => {
-      emblaApi.scrollNext();
+      if (!isHoveredRef.current) emblaApi.scrollNext();
     }, 5000);
 
-    return () => {
-      clearInterval(autoplay);
-    };
+    return () => clearInterval(autoplay);
   }, [emblaApi, onSelect]);
 
   return (
@@ -47,14 +46,35 @@ const HeroSlider = ({ slides }) => {
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {slides.map((slide, index) => (
-            <div key={index} className="flex-[0_0_100%] min-w-0 relative">
-              <div className="relative h-[600px] md:h-[700px]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={slide.image}
-                  alt={slide.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
+            <div
+              key={index}
+              className="flex-[0_0_100%] min-w-0 relative"
+              onMouseEnter={() => { if (slide.videoId) isHoveredRef.current = true; }}
+              onMouseLeave={() => { isHoveredRef.current = false; }}
+            >
+              <div className="relative h-[600px] md:h-[700px] overflow-hidden">
+                {slide.videoId ? (
+                  /* YouTube video background – muted autoplay, no controls */
+                  <iframe
+                    src={`https://www.youtube.com/embed/${slide.videoId}?autoplay=1&mute=1&loop=1&playlist=${slide.videoId}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_type=3`}
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                    style={{
+                      width: 'max(100%, 177.78vh)',
+                      height: 'max(56.25vw, 100%)',
+                      border: 'none',
+                      pointerEvents: 'none',
+                    }}
+                    allow="autoplay; encrypted-media"
+                    title={slide.title}
+                  />
+                ) : (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={slide.image}
+                    alt={slide.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
                 <div className="absolute inset-0 flex items-center">
                   <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
