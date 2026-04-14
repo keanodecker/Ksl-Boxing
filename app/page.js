@@ -47,7 +47,6 @@ export default function HomePage() {
     },
     {
       image: '/wettkampf.webp',
-      contain: true,
       title: 'Wettkampftraining',
       subtitle: 'Profi- und Amateurboxen – intensives Training auf hohem Niveau',
       buttonText: 'Mehr erfahren',
@@ -109,7 +108,7 @@ export default function HomePage() {
       timesLink: '/training-times#advanced'
     },
     {
-      image: 'https://images.unsplash.com/photo-1697240666845-6095e2425870',
+      image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b',
       name: 'Fitnessboxen',
       description: 'Für alle ab 14 Jahren – jung oder alt, Anfänger oder erfahren. Effektives Ganzkörpertraining ohne Wettkampfambitionen. Mo & Mi · 18:00–19:00 Uhr.',
       detailsLink: '/groups#fitnessboxen',
@@ -397,9 +396,16 @@ export default function HomePage() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Unsere Trainingsgruppen</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {trainingGroups.map((group, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+              {trainingGroups.slice(0, 3).map((group, index) => (
                 <GroupCard key={index} {...group} index={index} />
+              ))}
+            </div>
+            <div className="flex flex-col sm:flex-row justify-center gap-8">
+              {trainingGroups.slice(3).map((group, index) => (
+                <div key={index} className="w-full sm:w-[calc(33.333%-1rem)] lg:max-w-[380px]">
+                  <GroupCard {...group} index={index + 3} />
+                </div>
               ))}
             </div>
           </motion.div>
