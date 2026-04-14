@@ -4,7 +4,6 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { motion } from 'framer-motion';
 
 const HeroSlider = ({ slides }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
@@ -95,12 +94,7 @@ const HeroSlider = ({ slides }) => {
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
                 <div className="absolute inset-0 flex items-center">
                   <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-                    <motion.div
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.2 }}
-                      className="max-w-2xl"
-                    >
+                    <div className="max-w-2xl">
                       <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
                         {slide.title}
                       </h1>
@@ -114,7 +108,7 @@ const HeroSlider = ({ slides }) => {
                       >
                         {slide.buttonText}
                       </Button>
-                    </motion.div>
+                    </div>
                   </div>
                 </div>
               </div>
