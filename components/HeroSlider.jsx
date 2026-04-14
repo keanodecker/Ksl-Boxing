@@ -9,6 +9,8 @@ import { motion } from 'framer-motion';
 const HeroSlider = ({ slides }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
+  // Track which video slides have been activated – once active, keep iframe mounted
+  const [activatedVideos, setActivatedVideos] = useState(new Set());
   const isHoveredRef = useRef(false);
 
   const scrollPrev = useCallback(() => {
@@ -25,8 +27,13 @@ const HeroSlider = ({ slides }) => {
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
+    const idx = emblaApi.selectedScrollSnap();
+    setSelectedIndex(idx);
+    // Activate video iframe only when the slide becomes visible
+    if (slides[idx]?.videoId) {
+      setActivatedVideos((prev) => new Set(prev).add(idx));
+    }
+  }, [emblaApi, slides]);
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -54,19 +61,29 @@ const HeroSlider = ({ slides }) => {
             >
               <div className="relative h-[600px] md:h-[700px] overflow-hidden">
                 {slide.videoId ? (
-                  /* YouTube video background – muted autoplay, no controls */
-                  <iframe
-                    src={`https://www.youtube.com/embed/${slide.videoId}?autoplay=1&mute=1&loop=1&playlist=${slide.videoId}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_type=3`}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                    style={{
-                      width: 'max(100%, 177.78vh)',
-                      height: 'max(56.25vw, 100%)',
-                      border: 'none',
-                      pointerEvents: 'none',
-                    }}
-                    allow="autoplay; encrypted-media"
-                    title={slide.title}
-                  />
+                  activatedVideos.has(index) ? (
+                    /* iframe only loads once this slide has been scrolled to */
+                    <iframe
+                      src={`https://www.youtube.com/embed/${slide.videoId}?autoplay=1&mute=1&loop=1&playlist=${slide.videoId}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_type=3`}
+                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                      style={{
+                        width: 'max(100%, 177.78vh)',
+                        height: 'max(56.25vw, 100%)',
+                        border: 'none',
+                        pointerEvents: 'none',
+                      }}
+                      allow="autoplay; encrypted-media"
+                      title={slide.title}
+                    />
+                  ) : (
+                    /* Thumbnail placeholder until slide is first visited */
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={`https://img.youtube.com/vi/${slide.videoId}/maxresdefault.jpg`}
+                      alt={slide.title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  )
                 ) : (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
