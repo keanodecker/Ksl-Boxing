@@ -89,7 +89,7 @@ const HeroSlider = ({ slides }) => {
                   <img
                     src={slide.image}
                     alt={slide.title}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className={`absolute inset-0 w-full h-full ${slide.contain ? 'object-contain bg-black' : 'object-cover'}`}
                   />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
