@@ -46,7 +46,7 @@ export default function HomePage() {
       link: '/groups#fitness'
     },
     {
-      image: '/wettkampf.webp',
+      image: 'https://images.unsplash.com/photo-1601039834205-4e3f1e932f5a',
       title: 'Wettkampftraining',
       subtitle: 'Profi- und Amateurboxen – intensives Training auf hohem Niveau',
       buttonText: 'Mehr erfahren',
@@ -101,7 +101,7 @@ export default function HomePage() {
       timesLink: '/training-times#fitness'
     },
     {
-      image: '/wettkampf.webp',
+      image: 'https://images.unsplash.com/photo-1679500683809-35c8236381b6',
       name: 'Wettkampftraining',
       description: 'Profi- und Amateurboxen für Wettkämpfer. Intensives Training auf hohem Niveau mit erfahrenen Trainern. Mo–Fr · 19:00–20:30 Uhr.',
       detailsLink: '/groups#advanced',
