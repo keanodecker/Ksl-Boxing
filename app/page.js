@@ -25,40 +25,40 @@ export default function HomePage() {
       link: '/club'
     },
     {
-      image: 'https://images.unsplash.com/photo-1601039834205-4e3f1e932f5a',
-      title: 'Wettkampfmannschaft',
-      subtitle: 'Hochleistungstraining für ambitionierte Boxer – Werde Teil unseres Wettkampfteams',
-      buttonText: 'Zum Team',
-      link: '/groups#competition'
+      image: 'https://images.unsplash.com/photo-1702667752618-0f347ec02f74',
+      title: 'Fitnessboxen',
+      subtitle: 'Für alle ab 14 Jahren – effektives Ganzkörpertraining ohne Wettkampfambitionen',
+      buttonText: 'Mehr erfahren',
+      link: '/groups#fitnessboxen'
     },
     {
-      image: 'https://images.unsplash.com/photo-1702667752618-0f347ec02f74',
-      title: 'Fitness-Boxen',
-      subtitle: 'Effektives Ganzkörpertraining – Verbessere Kraft, Ausdauer und Koordination',
-      buttonText: 'Jetzt starten',
+      image: 'https://images.unsplash.com/photo-1638851240443-762225963c29',
+      title: 'Anfängertraining & Kindertraining',
+      subtitle: 'Spielerisch und strukturiert in die Welt des Boxens einsteigen – ab 7 Jahren',
+      buttonText: 'Mehr erfahren',
+      link: '/groups#beginners'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1697240666845-6095e2425870',
+      title: 'Manager Fitnessboxen',
+      subtitle: 'Training ab 40 Jahren – egal ob Profi, Amateur, Ex-Profi oder Anfänger',
+      buttonText: 'Mehr erfahren',
       link: '/groups#fitness'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1601039834205-4e3f1e932f5a',
+      title: 'Wettkampftraining',
+      subtitle: 'Profi- und Amateurboxen – intensives Training auf hohem Niveau',
+      buttonText: 'Mehr erfahren',
+      link: '/groups#advanced'
     },
     {
       image: 'https://images.unsplash.com/photo-1475670033737-f3bfd43d2d29',
       title: 'Frauenboxen',
-      subtitle: 'Empowerment durch Sport – Spezielles Training für Frauen in motivierender Atmosphäre',
+      subtitle: 'Spezielles Training für Frauen in motivierender und unterstützender Atmosphäre',
       buttonText: 'Mehr erfahren',
       link: '/groups#women'
     },
-    {
-      image: 'https://images.unsplash.com/photo-1638851240443-762225963c29',
-      title: 'Kinder & Jugend',
-      subtitle: 'Spielerisch Boxen lernen – Förderung von Disziplin, Respekt und Selbstvertrauen',
-      buttonText: 'Für Kids',
-      link: '/groups#kids'
-    },
-    {
-      image: 'https://images.unsplash.com/photo-1679500502523-b40fb6f0563d',
-      title: 'Anfängertraining',
-      subtitle: 'Keine Vorkenntnisse nötig – Starte deine Box-Karriere mit professioneller Anleitung',
-      buttonText: 'Probetraining',
-      link: '/groups#beginners'
-    }
   ];
 
   const latestNews = [
