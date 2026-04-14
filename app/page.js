@@ -47,7 +47,6 @@ export default function HomePage() {
     },
     {
       image: '/wettkampf.webp',
-      contain: true,
       title: 'Wettkampftraining',
       subtitle: 'Profi- und Amateurboxen – intensives Training auf hohem Niveau',
       buttonText: 'Mehr erfahren',
