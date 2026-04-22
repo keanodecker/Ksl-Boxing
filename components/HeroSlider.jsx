@@ -55,7 +55,7 @@ const HeroSlider = ({ slides }) => {
             <div
               key={index}
               className="flex-[0_0_100%] min-w-0 relative"
-              onMouseEnter={() => { if (slide.videoId) isHoveredRef.current = true; }}
+              onMouseEnter={() => { isHoveredRef.current = true; }}
               onMouseLeave={() => { isHoveredRef.current = false; }}
             >
               <div className="relative h-[600px] md:h-[700px] overflow-hidden">
