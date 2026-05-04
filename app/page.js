@@ -32,7 +32,7 @@ export default function HomePage() {
       link: '/groups#fitnessboxen'
     },
     {
-      image: '/kindertraining-slide.webp',
+      videoId: 'xq54WotTVag',
       title: 'Anfängertraining & Kindertraining',
       subtitle: 'Spielerisch und strukturiert in die Welt des Boxens einsteigen – ab 7 Jahren',
       buttonText: 'Mehr erfahren',
