@@ -13,7 +13,8 @@ export async function POST(request) {
 
     await resend.emails.send({
       from: 'KSL Boxing Kontaktformular <noreply@ksl-boxing.com>',
-      to: ['info@media-castle.com'],
+      to: ['info@ksl-boxing.com'],
+      cc: ['kontakt@cesarsicherheit.de'],
       replyTo: email,
       subject: `Neue Kontaktanfrage von ${name}`,
       html: `
