@@ -76,7 +76,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">E-Mail</h3>
-                      <p className="text-muted-foreground">info@ksl-boxing-lahr.de</p>
+                      <p className="text-muted-foreground">info@ksl-boxing.com</p>
                     </div>
                   </div>
 
