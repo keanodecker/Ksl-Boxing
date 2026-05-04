@@ -71,7 +71,7 @@ export default function PrivacyPage() {
                   Dinglingerhauptstr. 87<br />
                   77933 Lahr/Schwarzwald<br />
                   Telefon: (+49) 7821 / 502 09 62<br />
-                  E-Mail: info@ksl-boxing-lahr.de
+                  E-Mail: info@ksl-boxing.com
                 </p>
               </div>
               <div>

@@ -31,7 +31,7 @@ export default function ImprintPage() {
               <div>
                 <p className="font-semibold">Kontakt:</p>
                 <p className="text-muted-foreground">Telefon: (+49) 7821 / 502 09 62</p>
-                <p className="text-muted-foreground">E-Mail: info@ksl-boxing-lahr.de</p>
+                <p className="text-muted-foreground">E-Mail: info@ksl-boxing.com</p>
               </div>
               <div>
                 <p className="font-semibold">Registereintrag:</p>

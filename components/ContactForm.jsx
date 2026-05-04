@@ -45,22 +45,40 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validateForm()) {
-      return;
-    }
+    if (!validateForm()) return;
 
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      toast({
-        title: 'Nachricht gesendet',
-        description: 'Vielen Dank für Ihre Nachricht. Wir werden uns bald bei Ihnen melden.',
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
 
-      setFormData({ name: '', email: '', message: '' });
-      setErrors({});
+      if (res.ok) {
+        toast({
+          title: 'Nachricht gesendet',
+          description: 'Vielen Dank für Ihre Nachricht. Wir werden uns bald bei Ihnen melden.',
+        });
+        setFormData({ name: '', email: '', message: '' });
+        setErrors({});
+      } else {
+        toast({
+          title: 'Fehler',
+          description: 'Ihre Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut.',
+          variant: 'destructive',
+        });
+      }
+    } catch {
+      toast({
+        title: 'Fehler',
+        description: 'Keine Verbindung zum Server. Bitte versuchen Sie es später erneut.',
+        variant: 'destructive',
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const handleChange = (e) => {
