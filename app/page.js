@@ -87,7 +87,7 @@ export default function HomePage() {
 
   const trainingGroups = [
     {
-      image: 'https://images.unsplash.com/photo-1593352217070-4900df41715b',
+      image: '/kindertraining-card.webp',
       name: 'Anfängertraining & Kindertraining',
       description: 'Kindertraining ab 7 Jahren und Anfängertraining – spielerisch und strukturiert in die Welt des Boxens einsteigen. Mo & Mi · 17:30–18:30 Uhr.',
       detailsLink: '/groups#beginners',
