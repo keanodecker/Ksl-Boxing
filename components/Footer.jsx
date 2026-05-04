@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import CookieSettingsButton from '@/components/CookieSettingsButton';
 
 const Footer = () => {
   return (
@@ -21,6 +22,7 @@ const Footer = () => {
             >
               Datenschutz
             </Link>
+            <CookieSettingsButton />
           </div>
         </div>
       </div>

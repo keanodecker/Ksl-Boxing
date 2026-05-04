@@ -1,6 +1,7 @@
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import CookieBanner from '@/components/CookieBanner';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
           <Footer />
         </div>
         <Toaster />
+        <CookieBanner />
       </body>
     </html>
   );
