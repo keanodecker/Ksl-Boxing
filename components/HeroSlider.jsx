@@ -81,6 +81,8 @@ const HeroSlider = ({ slides }) => {
                       src={`https://img.youtube.com/vi/${slide.videoId}/maxresdefault.jpg`}
                       alt={slide.title}
                       className="absolute inset-0 w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
                     />
                   )
                 ) : (
@@ -89,6 +91,9 @@ const HeroSlider = ({ slides }) => {
                     src={slide.image}
                     alt={slide.title}
                     className={`absolute inset-0 w-full h-full ${slide.contain ? 'object-contain bg-black' : 'object-cover'}`}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    fetchPriority={index === 0 ? 'high' : 'auto'}
+                    decoding="async"
                   />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
