@@ -22,6 +22,8 @@ export default function PhotosPage() {
   const kidsPhotos = readPhotos('kindertraining');
   const clubPhotos = readPhotos('club-fotos');
   const geschichtePhotos = readPhotos('geschichte');
+  const besuchePhotos = readPhotos('besuche');
+  const highlightsPhotos = readPhotos('highlights');
 
   return (
     <main className="py-20">
@@ -34,6 +36,8 @@ export default function PhotosPage() {
           kidsPhotos={kidsPhotos}
           clubPhotos={clubPhotos}
           geschichtePhotos={geschichtePhotos}
+          besuchePhotos={besuchePhotos}
+          highlightsPhotos={highlightsPhotos}
           kidsVideos={kidsVideos}
           clubVideos={clubVideos}
           geschichteVideos={geschichteVideos}

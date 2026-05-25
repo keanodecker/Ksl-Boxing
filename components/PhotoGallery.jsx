@@ -13,6 +13,8 @@ export default function PhotoGallery({
   kidsPhotos = [],
   clubPhotos = [],
   geschichtePhotos = [],
+  besuchePhotos = [],
+  highlightsPhotos = [],
   kidsVideos = [],
   clubVideos = [],
   geschichteVideos = [],
@@ -66,18 +68,24 @@ export default function PhotoGallery({
   const kidsItems = interleave(kidsPhotos, kidsVideos, 'Kindertraining');
   const clubItems = insertNthFromEnd(clubPhotos, clubVideos, 'Boxclub', 5);
   const geschichteItems = interleave(geschichtePhotos, geschichteVideos, 'Geschichte');
+  const besucheItems = besuchePhotos.map(src => ({ type: 'photo', src, label: 'Besuche' }));
+  const highlightsItems = highlightsPhotos.map(src => ({ type: 'photo', src, label: 'Highlights' }));
 
   const displayed =
     filter === 'all' ? buildAllView() :
     filter === 'Kindertraining' ? kidsItems :
     filter === 'Boxclub' ? clubItems :
-    geschichteItems;
+    filter === 'Geschichte' ? geschichteItems :
+    filter === 'Besuche' ? besucheItems :
+    highlightsItems;
 
   const filters = [
     { key: 'all', label: 'Alle' },
     { key: 'Kindertraining', label: 'Kindertraining' },
     { key: 'Boxclub', label: 'Boxclub' },
     { key: 'Geschichte', label: 'Geschichte' },
+    { key: 'Besuche', label: 'Besuche' },
+    { key: 'Highlights', label: 'Highlights' },
   ];
 
   return (
