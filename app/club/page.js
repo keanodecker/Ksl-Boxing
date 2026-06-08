@@ -5,8 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Target, Heart, Users, HelpCircle, Shield, Award, ImageIcon } from 'lucide-react';
 
 const coaches = [
-  { name: 'Sezer Ülker',       role: 'Clubchef · Trainer', photo: '/trainer/sezer-uelker.jpeg' },
-  { name: 'Marco Gronert',     role: 'Trainer', photo: '/trainer/marco-gronert.jpeg' },
+  { name: 'Sezer Ülker',       role: 'Clubchef · Gründungsmitglied · Trainer', photo: '/trainer/sezer-uelker.jpeg', tooltip: 'Mehrfacher Baden-Württemberg Landesmeister ausgebildet' },
+  { name: 'Marco Gronert',     role: 'Gründungsmitglied · Trainer', photo: '/trainer/marco-gronert.jpeg', tooltip: 'Mehrfacher Baden-Württemberg Landesmeister ausgebildet' },
   { name: 'Pepe Sanfilippo',   role: 'Trainer', photo: null },
   { name: 'Dan Hoffman',       role: 'Trainer', photo: null, noPlaceholder: true },
 ];
@@ -193,7 +193,7 @@ export default function ClubPage() {
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {coaches.map((coach, index) => (
-                    <div key={index} className="flex gap-4 p-5 bg-secondary rounded-lg border border-border">
+                    <div key={index} className="relative group flex gap-4 p-5 bg-secondary rounded-lg border border-border">
                       {/* Foto */}
                       {coach.photo ? (
                         // eslint-disable-next-line @next/next/no-img-element
@@ -213,6 +213,11 @@ export default function ClubPage() {
                         <h3 className="text-lg font-bold">{coach.name}</h3>
                         <p className="text-primary text-sm font-medium mt-1">{coach.role}</p>
                       </div>
+                      {coach.tooltip && (
+                        <div className="absolute -top-9 left-1/2 -translate-x-1/2 bg-black/85 text-white text-xs px-3 py-1.5 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                          {coach.tooltip}
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
