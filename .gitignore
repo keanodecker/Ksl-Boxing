@@ -16,3 +16,4 @@ horizons-src/
 .DS_Store
 *.local
 .env.local
+next-env.d.ts
