@@ -37,7 +37,7 @@ export default function ImprintPage() {
                 <p className="font-semibold">Registereintrag:</p>
                 <p className="text-muted-foreground">Eintragung im Vereinsregister</p>
                 <p className="text-muted-foreground">Registergericht: Amtsgericht Freiburg</p>
-                <p className="text-muted-foreground">Registernummer: [Registernummer eintragen]</p>
+                <p className="text-muted-foreground">Registernummer: VR 701542</p>
               </div>
               <div>
                 <p className="text-xs text-muted-foreground/60 italic">Stand: 2026</p>
