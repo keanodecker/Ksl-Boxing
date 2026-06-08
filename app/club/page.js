@@ -6,9 +6,9 @@ import { Target, Heart, Users, HelpCircle, Shield, Award, ImageIcon } from 'luci
 
 const coaches = [
   { name: 'Sezer Ülker',       role: 'Clubchef · Trainer', photo: '/trainer/sezer-uelker.jpeg' },
+  { name: 'Marco Gronert',     role: 'Trainer', photo: '/trainer/marco-gronert.jpeg' },
   { name: 'Pepe Sanfilippo',   role: 'Trainer', photo: null },
   { name: 'Dan Hoffman',       role: 'Trainer', photo: null, noPlaceholder: true },
-  { name: 'Marco Gronert',     role: 'Trainer', photo: null },
 ];
 
 const faqs = [
