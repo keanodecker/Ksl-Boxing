@@ -18,14 +18,14 @@ export default function HomePage() {
 
   const heroSlides = [
     {
-      image: 'https://images.unsplash.com/photo-1695292007578-583aeda2729a',
+      image: 'https://images.unsplash.com/photo-1695292007578-583aeda2729a?auto=format&fit=crop&w=1920&q=70',
       title: 'Willkommen bei KSL Boxing Lahr',
       subtitle: 'Tradition trifft Leidenschaft – Boxen für alle Altersgruppen und Leistungsstufen',
       buttonText: 'Mehr erfahren',
       link: '/club'
     },
     {
-      image: 'https://images.unsplash.com/photo-1702667752618-0f347ec02f74',
+      image: 'https://images.unsplash.com/photo-1702667752618-0f347ec02f74?auto=format&fit=crop&w=1920&q=70',
       title: 'Fitnessboxen',
       subtitle: 'Für alle ab 14 Jahren – effektives Ganzkörpertraining ohne Wettkampfambitionen',
       buttonText: 'Mehr erfahren',
@@ -53,7 +53,7 @@ export default function HomePage() {
       link: '/groups#advanced'
     },
     {
-      image: 'https://images.unsplash.com/photo-1475670033737-f3bfd43d2d29',
+      image: 'https://images.unsplash.com/photo-1475670033737-f3bfd43d2d29?auto=format&fit=crop&w=1920&q=70',
       title: 'Frauenboxen',
       subtitle: 'Spezielles Training für Frauen in motivierender und unterstützender Atmosphäre',
       buttonText: 'Mehr erfahren',

@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HeroSlider = ({ slides }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 20 });
   const [selectedIndex, setSelectedIndex] = useState(0);
   // Track which video slides have been activated – once active, keep iframe mounted
   const [activatedVideos, setActivatedVideos] = useState(new Set());
@@ -50,7 +50,7 @@ const HeroSlider = ({ slides }) => {
   return (
     <div className="relative w-full">
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex">
+        <div className="flex" style={{ willChange: 'transform', transform: 'translate3d(0,0,0)', backfaceVisibility: 'hidden' }}>
           {slides.map((slide, index) => (
             <div
               key={index}
@@ -58,7 +58,7 @@ const HeroSlider = ({ slides }) => {
               onMouseEnter={() => { isHoveredRef.current = true; }}
               onMouseLeave={() => { isHoveredRef.current = false; }}
             >
-              <div className="relative h-[600px] md:h-[700px] overflow-hidden">
+              <div className="relative h-[600px] md:h-[700px] overflow-hidden" style={{ transform: 'translateZ(0)' }}>
                 {slide.videoId ? (
                   activatedVideos.has(index) ? (
                     /* iframe only loads once this slide has been scrolled to */
@@ -94,6 +94,7 @@ const HeroSlider = ({ slides }) => {
                     loading={index === 0 ? 'eager' : 'lazy'}
                     fetchPriority={index === 0 ? 'high' : 'auto'}
                     decoding="async"
+                    style={{ transform: 'translateZ(0)' }}
                   />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
