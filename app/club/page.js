@@ -7,7 +7,7 @@ import { Target, Heart, Users, HelpCircle, Shield, Award, ImageIcon } from 'luci
 const coaches = [
   { name: 'Sezer Ülker',       role: 'Clubchef · Gründungsmitglied · Trainer', photo: '/trainer/sezer-uelker.jpeg', tooltip: 'Mehrfacher Baden-Württemberg Landesmeister ausgebildet' },
   { name: 'Marco Gronert',     role: 'Gründungsmitglied · Trainer', photo: '/trainer/marco-gronert.jpeg', tooltip: 'Mehrfacher Baden-Württemberg Landesmeister ausgebildet' },
-  { name: 'Pepe Sanfilippo',   role: 'Trainer', photo: null },
+  { name: 'Pepe Sanfilippo',   role: 'Trainer', photo: '/trainer/pepe-sanfilippo.jpeg' },
   { name: 'Dan Hoffman',       role: 'Trainer', photo: null, noPlaceholder: true },
 ];
 
