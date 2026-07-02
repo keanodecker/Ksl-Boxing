@@ -10,8 +10,8 @@ export default function TrainingTimesPage() {
       group: 'Anfängertraining & Kindertraining',
       note: 'Kindertraining ab 7 Jahren · Anfänger',
       schedule: [
-        { day: 'Montag',   time: '17:30 - 18:30 Uhr' },
-        { day: 'Mittwoch', time: '17:30 - 18:30 Uhr' },
+        { day: 'Montag',     time: '17:30 - 18:30 Uhr' },
+        { day: 'Donnerstag', time: '17:30 - 18:30 Uhr' },
       ]
     },
     {
@@ -19,7 +19,7 @@ export default function TrainingTimesPage() {
       group: 'Manager Fitnessboxen',
       note: 'Ab 40 Jahren',
       schedule: [
-        { day: 'Dienstag', time: '18:00 - 19:15 Uhr' },
+        { day: 'Dienstag', time: '18:00 - 19:00 Uhr' },
       ]
     },
     {
@@ -39,8 +39,7 @@ export default function TrainingTimesPage() {
       group: 'Fitnessboxen',
       note: 'Ab 14 Jahren · alle Altersgruppen',
       schedule: [
-        { day: 'Montag',   time: '18:00 - 19:00 Uhr' },
-        { day: 'Mittwoch', time: '18:00 - 19:00 Uhr' },
+        { day: 'Donnerstag', time: '18:00 - 19:00 Uhr' },
       ]
     },
     {
