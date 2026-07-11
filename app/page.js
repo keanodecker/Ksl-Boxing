@@ -5,12 +5,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import HeroSlider from '@/components/HeroSlider';
-import NewsCard from '@/components/NewsCard';
 import GroupCard from '@/components/GroupCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { CheckCircle2, Trophy, Medal, Star } from 'lucide-react';
+import { CheckCircle2, Trophy, Medal, Star, Calendar, User, ImageIcon } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export default function HomePage() {
@@ -61,29 +60,12 @@ export default function HomePage() {
     },
   ];
 
-  const latestNews = [
-    {
-      title: 'Erfolgreicher Saisonstart der Wettkampfmannschaft',
-      date: '15. März 2026',
-      author: 'Thomas Müller',
-      preview: 'Unsere Wettkampfmannschaft startet mit beeindruckenden Siegen in die neue Saison. Drei unserer Athleten konnten ihre Kämpfe für sich entscheiden.',
-      link: '/news'
-    },
-    {
-      title: 'Neue Trainingszeiten für Fitness-Boxen',
-      date: '10. März 2026',
-      author: 'Sarah Schmidt',
-      preview: 'Ab April bieten wir zusätzliche Trainingszeiten für Fitness-Boxen an. Jetzt auch mittwochs um 19:00 Uhr verfügbar.',
-      link: '/news'
-    },
-    {
-      title: 'Tag der offenen Tür am 5. April',
-      date: '5. März 2026',
-      author: 'Michael Weber',
-      preview: 'Besuchen Sie uns am 5. April zum Tag der offenen Tür. Schnuppertraining, Vorführungen und Beratung für Interessierte.',
-      link: '/news'
-    }
-  ];
+  const featuredNews = {
+    title: 'Granit Stein fordert Box-Legende Felix Sturm heraus',
+    date: '10. Juli 2026',
+    author: 'KSL Boxing Lahr',
+    preview: 'Ganz großer Boxsport: Am 11. Juli 2026 trifft Granit Stein in Stuttgart auf Felix Sturm – den fünffachen Ex-Weltmeister. Für Sturm ist es der große Abschiedskampf „One Last Dance". Über den Kampf wurde unter anderem in der BILD berichtet, das Event wird weltweit in über 200 Länder übertragen.',
+  };
 
   const trainingGroups = [
     {
@@ -408,6 +390,60 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* News Section */}
+      <section className="py-20 bg-background border-t border-border">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="flex items-center justify-between mb-10">
+              <h2 className="text-3xl md:text-4xl font-extrabold">News</h2>
+              <Button
+                variant="outline"
+                className="transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:border-primary active:scale-[0.98]"
+                onClick={() => router.push('/news')}
+              >
+                Mehr
+              </Button>
+            </div>
+
+            <Card className="bg-card text-card-foreground border-border overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-2">
+                {/* Bild-Platzhalter (links) */}
+                <div className="h-56 md:h-full min-h-[220px] bg-muted flex flex-col items-center justify-center gap-2 border-b md:border-b-0 md:border-r border-border">
+                  <ImageIcon className="w-12 h-12 text-muted-foreground/40" />
+                  <span className="text-sm text-muted-foreground/40">Bild folgt</span>
+                </div>
+
+                {/* Inhalt (rechts) */}
+                <div className="p-8 flex flex-col">
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
+                    <span className="flex items-center gap-1">
+                      <Calendar className="w-4 h-4" />
+                      {featuredNews.date}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <User className="w-4 h-4" />
+                      {featuredNews.author}
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4">{featuredNews.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-6">{featuredNews.preview}</p>
+                  <Button
+                    className="mt-auto self-start bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98]"
+                    onClick={() => router.push('/news')}
+                  >
+                    Mehr
+                  </Button>
+                </div>
+              </div>
+            </Card>
           </motion.div>
         </div>
       </section>

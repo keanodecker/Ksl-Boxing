@@ -9,28 +9,7 @@ export default function NewsPage() {
       title: 'Granit Stein fordert Box-Legende Felix Sturm heraus',
       date: '10. Juli 2026',
       author: 'KSL Boxing Lahr',
-      preview: 'Ganz großer Boxsport: Am 11. Juli 2026 trifft Granit Stein in der Porsche-Arena Stuttgart auf Felix Sturm – den fünffachen Ex-Weltmeister und eine der prägendsten Figuren des deutschen Profiboxens. Für den 47-jährigen Sturm ist es der große Abschiedskampf „One Last Dance". Gekämpft wird im Halbschwergewicht über zehn Runden. Das Event wird weltweit in über 200 Länder übertragen. Wir drücken Granit Stein die Daumen!',
-      link: '/news'
-    },
-    {
-      title: 'Erfolgreicher Saisonstart der Wettkampfmannschaft',
-      date: '15. März 2026',
-      author: 'Thomas Müller',
-      preview: 'Unsere Wettkampfmannschaft startet mit beeindruckenden Siegen in die neue Saison. Drei unserer Athleten konnten ihre Kämpfe für sich entscheiden und zeigten hervorragende Leistungen im Ring.',
-      link: '/news'
-    },
-    {
-      title: 'Tag der offenen Tür am 5. April',
-      date: '5. März 2026',
-      author: 'Michael Weber',
-      preview: 'Besuchen Sie uns am 5. April zum Tag der offenen Tür. Schnuppertraining, Vorführungen und Beratung für Interessierte. Für Verpflegung ist gesorgt.',
-      link: '/news'
-    },
-    {
-      title: 'Erfolgreiche Teilnahme am Landesturnier',
-      date: '28. Februar 2026',
-      author: 'Thomas Müller',
-      preview: 'Beim Landesturnier in Stuttgart konnten unsere Nachwuchsboxer überzeugen. Zwei Goldmedaillen und eine Silbermedaille sind das Ergebnis harter Trainingsarbeit.',
+      preview: 'Ganz großer Boxsport: Am 11. Juli 2026 trifft Granit Stein in der Porsche-Arena Stuttgart auf Felix Sturm – den fünffachen Ex-Weltmeister und eine der prägendsten Figuren des deutschen Profiboxens. Für den 47-jährigen Sturm ist es der große Abschiedskampf „One Last Dance". Gekämpft wird im Halbschwergewicht über zehn Runden. Über den Kampf wurde unter anderem in der BILD berichtet, die Übertragung läuft live bei BILD+ und wird weltweit in über 200 Länder gezeigt. Wir drücken Granit Stein die Daumen!',
       link: '/news'
     }
   ];
