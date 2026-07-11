@@ -6,17 +6,17 @@ import NewsCard from '@/components/NewsCard';
 export default function NewsPage() {
   const newsArticles = [
     {
+      title: 'Granit Stein fordert Box-Legende Felix Sturm heraus',
+      date: '10. Juli 2026',
+      author: 'KSL Boxing Lahr',
+      preview: 'Ganz großer Boxsport: Am 11. Juli 2026 trifft Granit Stein in der Porsche-Arena Stuttgart auf Felix Sturm – den fünffachen Ex-Weltmeister und eine der prägendsten Figuren des deutschen Profiboxens. Für den 47-jährigen Sturm ist es der große Abschiedskampf „One Last Dance". Gekämpft wird im Halbschwergewicht über zehn Runden. Das Event wird weltweit in über 200 Länder übertragen. Wir drücken Granit Stein die Daumen!',
+      link: '/news'
+    },
+    {
       title: 'Erfolgreicher Saisonstart der Wettkampfmannschaft',
       date: '15. März 2026',
       author: 'Thomas Müller',
       preview: 'Unsere Wettkampfmannschaft startet mit beeindruckenden Siegen in die neue Saison. Drei unserer Athleten konnten ihre Kämpfe für sich entscheiden und zeigten hervorragende Leistungen im Ring.',
-      link: '/news'
-    },
-    {
-      title: 'Neue Trainingszeiten für Fitness-Boxen',
-      date: '10. März 2026',
-      author: 'Sarah Schmidt',
-      preview: 'Ab April bieten wir zusätzliche Trainingszeiten für Fitness-Boxen an. Jetzt auch mittwochs um 19:00 Uhr verfügbar. Die große Nachfrage hat uns zu diesem Schritt bewogen.',
       link: '/news'
     },
     {
@@ -31,41 +31,6 @@ export default function NewsPage() {
       date: '28. Februar 2026',
       author: 'Thomas Müller',
       preview: 'Beim Landesturnier in Stuttgart konnten unsere Nachwuchsboxer überzeugen. Zwei Goldmedaillen und eine Silbermedaille sind das Ergebnis harter Trainingsarbeit.',
-      link: '/news'
-    },
-    {
-      title: 'Neuer Trainingsraum eröffnet',
-      date: '20. Februar 2026',
-      author: 'Michael Weber',
-      preview: 'Dank großzügiger Spenden konnten wir einen zusätzlichen Trainingsraum einrichten. Mehr Platz für unsere wachsende Mitgliederzahl.',
-      link: '/news'
-    },
-    {
-      title: 'Workshop: Ernährung im Boxsport',
-      date: '12. Februar 2026',
-      author: 'Sarah Schmidt',
-      preview: 'Am 25. Februar findet ein Workshop zum Thema Sporternährung statt. Ernährungsberaterin Dr. Anna Meier gibt wertvolle Tipps für Boxer.',
-      link: '/news'
-    },
-    {
-      title: 'Frauenboxen: Neue Gruppe startet',
-      date: '5. Februar 2026',
-      author: 'Sarah Schmidt',
-      preview: 'Aufgrund der hohen Nachfrage starten wir eine zweite Frauenboxen-Gruppe. Trainingszeiten: Dienstags 18:00 Uhr und Donnerstags 19:00 Uhr.',
-      link: '/news'
-    },
-    {
-      title: 'Jahreshauptversammlung 2026',
-      date: '28. Januar 2026',
-      author: 'Michael Weber',
-      preview: 'Die Jahreshauptversammlung findet am 15. Februar statt. Alle Mitglieder sind herzlich eingeladen. Tagesordnung folgt per E-Mail.',
-      link: '/news'
-    },
-    {
-      title: 'Wintercamp in den Alpen',
-      date: '15. Januar 2026',
-      author: 'Thomas Müller',
-      preview: 'Unser traditionelles Wintercamp führt uns dieses Jahr nach Garmisch-Partenkirchen. Intensives Training in beeindruckender Bergkulisse vom 10.-14. Februar.',
       link: '/news'
     }
   ];
