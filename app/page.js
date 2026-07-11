@@ -9,7 +9,7 @@ import GroupCard from '@/components/GroupCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { CheckCircle2, Trophy, Medal, Star, Calendar, User, ImageIcon } from 'lucide-react';
+import { CheckCircle2, Trophy, Medal, Star, Calendar, User } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export default function HomePage() {
@@ -414,34 +414,25 @@ export default function HomePage() {
             </div>
 
             <Card className="bg-card text-card-foreground border-border overflow-hidden">
-              <div className="grid grid-cols-1 md:grid-cols-2">
-                {/* Bild-Platzhalter (links) */}
-                <div className="h-56 md:h-full min-h-[220px] bg-muted flex flex-col items-center justify-center gap-2 border-b md:border-b-0 md:border-r border-border">
-                  <ImageIcon className="w-12 h-12 text-muted-foreground/40" />
-                  <span className="text-sm text-muted-foreground/40">Bild folgt</span>
+              <div className="p-8 flex flex-col">
+                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
+                  <span className="flex items-center gap-1">
+                    <Calendar className="w-4 h-4" />
+                    {featuredNews.date}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <User className="w-4 h-4" />
+                    {featuredNews.author}
+                  </span>
                 </div>
-
-                {/* Inhalt (rechts) */}
-                <div className="p-8 flex flex-col">
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
-                    <span className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
-                      {featuredNews.date}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <User className="w-4 h-4" />
-                      {featuredNews.author}
-                    </span>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4">{featuredNews.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed mb-6">{featuredNews.preview}</p>
-                  <Button
-                    className="mt-auto self-start bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98]"
-                    onClick={() => router.push('/news')}
-                  >
-                    Mehr
-                  </Button>
-                </div>
+                <h3 className="text-2xl font-bold mb-4">{featuredNews.title}</h3>
+                <p className="text-muted-foreground leading-relaxed mb-6">{featuredNews.preview}</p>
+                <Button
+                  className="self-start bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98]"
+                  onClick={() => router.push('/news')}
+                >
+                  Mehr
+                </Button>
               </div>
             </Card>
           </motion.div>

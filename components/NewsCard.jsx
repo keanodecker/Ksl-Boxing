@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Calendar, User, ImageIcon } from 'lucide-react';
+import { Calendar, User } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 
@@ -17,19 +17,14 @@ const NewsCard = ({ title, date, author, preview, link, image }) => {
       className="h-full"
     >
       <Card className="bg-card text-card-foreground border-border hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full overflow-hidden">
-        {/* Bild bzw. Platzhalter */}
-        {image ? (
+        {/* Bild nur anzeigen, wenn vorhanden */}
+        {image && (
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={image}
             alt={title}
             className="w-full h-48 object-cover"
           />
-        ) : (
-          <div className="w-full h-48 bg-muted border-b border-border flex flex-col items-center justify-center gap-2">
-            <ImageIcon className="w-10 h-10 text-muted-foreground/40" />
-            <span className="text-xs text-muted-foreground/40">Bild folgt</span>
-          </div>
         )}
         <CardHeader>
           <CardTitle className="text-2xl font-semibold">{title}</CardTitle>
