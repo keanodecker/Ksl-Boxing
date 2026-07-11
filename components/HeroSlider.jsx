@@ -59,7 +59,20 @@ const HeroSlider = ({ slides }) => {
               onMouseLeave={() => { isHoveredRef.current = false; }}
             >
               <div className="relative h-[600px] md:h-[700px] overflow-hidden" style={{ transform: 'translateZ(0)' }}>
-                {slide.videoId ? (
+                {slide.video ? (
+                  /* Selbst-gehostetes Video – komplett ohne YouTube-Bedienelemente */
+                  <video
+                    src={slide.video}
+                    poster={slide.poster}
+                    className={`absolute inset-0 w-full h-full ${slide.contain ? 'object-contain bg-black' : 'object-cover'}`}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    style={{ transform: 'translateZ(0)', pointerEvents: 'none' }}
+                  />
+                ) : slide.videoId ? (
                   activatedVideos.has(index) ? (
                     /* iframe only loads once this slide has been scrolled to */
                     <iframe
