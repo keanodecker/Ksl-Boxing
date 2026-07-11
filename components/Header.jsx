@@ -150,6 +150,19 @@ const Header = () => {
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild>
                     <Link
+                      href="/news"
+                      className={`text-sm font-medium px-3 py-2 transition-colors hover:text-primary ${
+                        isActive('/news') ? 'text-primary border-b-2 border-primary' : 'text-foreground'
+                      }`}
+                    >
+                      News
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link
                       href="/faq"
                       className={`text-sm font-medium px-3 py-2 transition-colors hover:text-primary ${
                         isActive('/faq') ? 'text-primary border-b-2 border-primary' : 'text-foreground'
@@ -260,6 +273,16 @@ const Header = () => {
                   }`}
                 >
                   Fotos
+                </Link>
+
+                <Link
+                  href="/news"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-lg font-medium transition-colors hover:text-primary ${
+                    isActive('/news') ? 'text-primary' : 'text-foreground'
+                  }`}
+                >
+                  News
                 </Link>
 
                 <Link
