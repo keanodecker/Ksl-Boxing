@@ -28,8 +28,8 @@ const HeroSlider = ({ slides }) => {
     if (!emblaApi) return;
     const idx = emblaApi.selectedScrollSnap();
     setSelectedIndex(idx);
-    // Activate video iframe only when the slide becomes visible
-    if (slides[idx]?.videoId) {
+    // Activate video/iframe only when the slide becomes visible
+    if (slides[idx]?.videoId || slides[idx]?.video) {
       setActivatedVideos((prev) => new Set(prev).add(idx));
     }
   }, [emblaApi, slides]);
@@ -60,18 +60,30 @@ const HeroSlider = ({ slides }) => {
             >
               <div className="relative h-[600px] md:h-[700px] overflow-hidden" style={{ transform: 'translateZ(0)' }}>
                 {slide.video ? (
-                  /* Selbst-gehostetes Video – komplett ohne YouTube-Bedienelemente */
-                  <video
-                    src={slide.video}
-                    poster={slide.poster}
-                    className={`absolute inset-0 w-full h-full ${slide.contain ? 'object-contain bg-black' : 'object-cover'}`}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                    style={{ transform: 'translateZ(0)', pointerEvents: 'none' }}
-                  />
+                  activatedVideos.has(index) ? (
+                    /* Selbst-gehostetes Video – komplett ohne YouTube-Bedienelemente */
+                    <video
+                      src={slide.video}
+                      poster={slide.poster}
+                      className={`absolute inset-0 w-full h-full ${slide.contain ? 'object-contain bg-black' : 'object-cover'}`}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                      style={{ transform: 'translateZ(0)', pointerEvents: 'none' }}
+                    />
+                  ) : (
+                    /* Poster-Bild, bis der Slide zum ersten Mal aktiv wird */
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={slide.poster}
+                      alt={slide.title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  )
                 ) : slide.videoId ? (
                   activatedVideos.has(index) ? (
                     /* iframe only loads once this slide has been scrolled to */
