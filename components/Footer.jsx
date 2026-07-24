@@ -26,7 +26,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Media Castle Signatur – horizontal, einzeilig (dunkler Grund) */}
+        {/* Media Castle Signatur – Highlight-Stil (V5, dunkler Grund) */}
         <div className="mt-8 pt-6 border-t border-border/60 flex justify-center">
           <a
             href="https://media-castle.com"
@@ -36,17 +36,50 @@ const Footer = () => {
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '8px',
+              gap: '16px',
               textDecoration: 'none',
               fontFamily: 'Poppins, system-ui, sans-serif',
               color: '#fff',
-              fontSize: '13px',
             }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/mc-logo-white.png" alt="Media Castle" width={18} height={18} />
-            <span style={{ fontWeight: 400, color: 'rgba(255,255,255,.6)' }}>visualized by</span>
-            <span style={{ fontWeight: 600 }}>media castle</span>
+            <img src="/mc-logo-white.png" alt="Media Castle" width={48} height={48} />
+            <span
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                lineHeight: 1.05,
+                gap: '3px',
+              }}
+            >
+              <span
+                style={{
+                  fontSize: '11px',
+                  fontWeight: 500,
+                  letterSpacing: '2.5px',
+                  textTransform: 'uppercase',
+                  color: 'rgba(255,255,255,.72)',
+                  background: 'rgba(120,160,255,.20)',
+                  padding: '3px 6px',
+                  borderRadius: '4px',
+                }}
+              >
+                visualized by
+              </span>
+              <span
+                style={{
+                  fontSize: '27px',
+                  fontWeight: 600,
+                  letterSpacing: '-.3px',
+                  background: 'rgba(255,255,255,.12)',
+                  padding: '1px 6px',
+                  borderRadius: '4px',
+                }}
+              >
+                media castle
+              </span>
+            </span>
           </a>
         </div>
       </div>
