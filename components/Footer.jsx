@@ -26,59 +26,39 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Media Castle Signatur – Highlight-Stil (weiß) auf Navy-Fläche */}
+        {/* visualized by media castle — gestapelte Signatur (dunkle Variante auf Navy) */}
         <div className="mt-8 pt-6 border-t border-border/60 flex justify-center">
           <a
-            href="https://media-castle.com"
+            href="https://www.media-castle.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-opacity duration-200 hover:opacity-90"
+            aria-label="visualized by media castle – zur Media Castle Webseite"
+            className="inline-flex items-center gap-3 no-underline transition-opacity duration-300 hover:opacity-85"
             style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '16px',
-              textDecoration: 'none',
               fontFamily: 'Poppins, system-ui, sans-serif',
-              color: '#ffffff',
               background: '#041833',
               padding: '12px 20px',
               borderRadius: '12px',
             }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/mc-logo-white.png" alt="Media Castle" width={48} height={48} />
-            <span
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'flex-start',
-                lineHeight: 1.05,
-                gap: '3px',
-              }}
-            >
+            <img
+              src="/mc-logo-white.png"
+              alt="Media Castle"
+              width={34}
+              height={34}
+              className="flex-shrink-0"
+            />
+            <span className="flex flex-col" style={{ lineHeight: 1.02 }}>
               <span
-                style={{
-                  fontSize: '11px',
-                  fontWeight: 500,
-                  letterSpacing: '2.5px',
-                  textTransform: 'uppercase',
-                  color: 'rgba(255,255,255,.72)',
-                  background: 'rgba(120,160,255,.20)',
-                  padding: '3px 6px',
-                  borderRadius: '4px',
-                }}
+                className="font-medium uppercase"
+                style={{ fontSize: '9px', letterSpacing: '2.5px', color: 'rgba(255,255,255,.6)' }}
               >
                 visualized by
               </span>
               <span
-                style={{
-                  fontSize: '27px',
-                  fontWeight: 600,
-                  letterSpacing: '-.3px',
-                  background: 'rgba(255,255,255,.12)',
-                  padding: '1px 6px',
-                  borderRadius: '4px',
-                }}
+                className="font-semibold"
+                style={{ fontSize: '22px', letterSpacing: '-0.3px', color: '#ffffff' }}
               >
                 media castle
               </span>
