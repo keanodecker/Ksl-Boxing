@@ -36,20 +36,31 @@ export default function PhotoGallery({
   }
 
   // "Alle"-Ansicht: 2× Kindertraining-Foto, 1× Boxclub-Foto, 1× Kindertraining-Video, 1× Geschichte-Foto (wiederholt)
+  // Zusätzlich: bei jedem 7. Bild ein Highlights-Foto einstreuen.
   function buildAllView() {
     const kp = kidsPhotos.map(src => ({ type: 'photo', src, label: 'Kindertraining' }));
     const cp = clubPhotos.map(src => ({ type: 'photo', src, label: 'Boxclub' }));
     const gp = geschichtePhotos.map(src => ({ type: 'photo', src, label: 'Geschichte' }));
+    const hp = highlightsPhotos.map(src => ({ type: 'photo', src, label: 'Highlights' }));
     const kv = kidsVideos.map(x => ({ type: 'video', videoId: x.videoId, title: x.title, src: ytThumb(x.videoId), label: 'Kindertraining' }));
-    const result = [];
+    const base = [];
     let ki = 0, ci = 0, gi = 0, vi = 0;
     while (ki < kp.length || ci < cp.length || gi < gp.length || vi < kv.length) {
-      if (ki < kp.length) result.push(kp[ki++]);
-      if (ki < kp.length) result.push(kp[ki++]);
-      if (ci < cp.length) result.push(cp[ci++]);
-      if (vi < kv.length) result.push(kv[vi++]);
-      if (gi < gp.length) result.push(gp[gi++]);
+      if (ki < kp.length) base.push(kp[ki++]);
+      if (ki < kp.length) base.push(kp[ki++]);
+      if (ci < cp.length) base.push(cp[ci++]);
+      if (vi < kv.length) base.push(kv[vi++]);
+      if (gi < gp.length) base.push(gp[gi++]);
     }
+    // Jedes 7. Element ein Highlights-Foto – jedes Highlight genau einmal
+    if (hp.length === 0) return base;
+    const result = [];
+    let hi = 0;
+    base.forEach((item, i) => {
+      result.push(item);
+      if ((i + 1) % 6 === 0 && hi < hp.length) result.push(hp[hi++]);
+    });
+    while (hi < hp.length) result.push(hp[hi++]);
     return result;
   }
 
