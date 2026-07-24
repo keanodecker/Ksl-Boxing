@@ -6,6 +6,14 @@ import NewsCard from '@/components/NewsCard';
 export default function NewsPage() {
   const newsArticles = [
     {
+      title: 'KSL Boxing Lahr hat eine neue Außenfassade',
+      date: '24. Juli 2026',
+      author: 'KSL Boxing Lahr',
+      preview: 'Frischer Look für unser Vereinsheim: Unser Boxclub hat eine neue Außenfassade bekommen. Das Gebäude präsentiert sich jetzt rundum modern und einladend – der passende erste Eindruck für alle, die bei uns trainieren oder vorbeischauen. Schaut gerne mal persönlich vorbei!',
+      image: '/news/aussenfassade.jpeg',
+      link: '/news'
+    },
+    {
       title: 'Granit Stein fordert Box-Legende Felix Sturm heraus',
       date: '10. Juli 2026',
       author: 'KSL Boxing Lahr',

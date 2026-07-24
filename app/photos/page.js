@@ -18,9 +18,23 @@ function readPhotos(folder) {
   }
 }
 
+// Fügt bei jedem 4. Bild ein Außenaufnahme-Foto ein
+function interleaveEveryFourth(base, extras) {
+  if (extras.length === 0) return base;
+  const result = [];
+  let ei = 0;
+  base.forEach((item, i) => {
+    result.push(item);
+    if ((i + 1) % 3 === 0 && ei < extras.length) result.push(extras[ei++]);
+  });
+  while (ei < extras.length) result.push(extras[ei++]);
+  return result;
+}
+
 export default function PhotosPage() {
   const kidsPhotos = readPhotos('kindertraining');
-  const clubPhotos = readPhotos('club-fotos');
+  const aussenPhotos = readPhotos('aussen');
+  const clubPhotos = interleaveEveryFourth(readPhotos('club-fotos'), aussenPhotos);
   const geschichtePhotos = readPhotos('geschichte');
   const besuchePhotos = readPhotos('besuche');
   const highlightsPhotos = readPhotos('highlights');
