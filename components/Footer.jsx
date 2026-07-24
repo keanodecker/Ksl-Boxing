@@ -26,24 +26,27 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Media Castle Signatur – Highlight-Stil (V5, dunkler Grund) */}
+        {/* Media Castle Signatur – Highlight-Stil (V4, hell) auf hellem Panel */}
         <div className="mt-8 pt-6 border-t border-border/60 flex justify-center">
           <a
             href="https://media-castle.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-opacity duration-200 hover:opacity-80"
+            className="transition-opacity duration-200 hover:opacity-90"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '16px',
               textDecoration: 'none',
               fontFamily: 'Poppins, system-ui, sans-serif',
-              color: '#fff',
+              color: '#041833',
+              background: '#ffffff',
+              padding: '12px 20px',
+              borderRadius: '12px',
             }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/mc-logo-white.png" alt="Media Castle" width={48} height={48} />
+            <img src="/mc-logo-navy.png" alt="Media Castle" width={48} height={48} />
             <span
               style={{
                 display: 'flex',
@@ -59,8 +62,8 @@ const Footer = () => {
                   fontWeight: 500,
                   letterSpacing: '2.5px',
                   textTransform: 'uppercase',
-                  color: 'rgba(255,255,255,.72)',
-                  background: 'rgba(120,160,255,.20)',
+                  color: 'rgba(4,24,51,.55)',
+                  background: 'rgba(47,107,255,.10)',
                   padding: '3px 6px',
                   borderRadius: '4px',
                 }}
@@ -72,7 +75,7 @@ const Footer = () => {
                   fontSize: '27px',
                   fontWeight: 600,
                   letterSpacing: '-.3px',
-                  background: 'rgba(255,255,255,.12)',
+                  background: 'rgba(4,24,51,.05)',
                   padding: '1px 6px',
                   borderRadius: '4px',
                 }}
