@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import CookieSettingsButton from '@/components/CookieSettingsButton';
 
 const Footer = () => {
@@ -41,8 +42,7 @@ const Footer = () => {
               borderRadius: '12px',
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/mc-logo-white.png"
               alt="Media Castle"
               width={34}
