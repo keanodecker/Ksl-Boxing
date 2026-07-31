@@ -1,14 +1,10 @@
 'use client';
 
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, User } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useRouter } from 'next/navigation';
 
-const NewsCard = ({ title, date, author, preview, link, image }) => {
-  const router = useRouter();
-
+const NewsCard = ({ title, date, author, preview, image }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -42,15 +38,6 @@ const NewsCard = ({ title, date, author, preview, link, image }) => {
         <CardContent className="flex-grow">
           <p className="text-muted-foreground leading-relaxed">{preview}</p>
         </CardContent>
-        <CardFooter className="mt-auto">
-          <Button
-            variant="outline"
-            className="w-full transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:border-primary active:scale-[0.98]"
-            onClick={() => router.push(link)}
-          >
-            Weiterlesen
-          </Button>
-        </CardFooter>
       </Card>
     </motion.div>
   );
