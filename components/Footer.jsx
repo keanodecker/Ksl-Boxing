@@ -27,7 +27,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* visualized by media castle — gestapelte Signatur (helle Variante, ohne Hintergrund) */}
+        {/* visualized by media castle — gestapelte Signatur (dunkle Variante auf Navy) */}
         <div className="mt-8 pt-6 border-t border-border/60 flex justify-center">
           <a
             href="https://www.media-castle.com"
@@ -35,7 +35,12 @@ const Footer = () => {
             rel="noopener noreferrer"
             aria-label="visualized by media castle – zur Media Castle Webseite"
             className="inline-flex items-center gap-3 no-underline transition-opacity duration-300 hover:opacity-85"
-            style={{ fontFamily: 'Poppins, system-ui, sans-serif' }}
+            style={{
+              fontFamily: 'Poppins, system-ui, sans-serif',
+              background: '#041833',
+              padding: '12px 20px',
+              borderRadius: '12px',
+            }}
           >
             <Image
               src="/mc-logo-white.png"
