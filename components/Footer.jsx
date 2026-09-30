@@ -27,19 +27,16 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* visualized by media castle — gestapelte Signatur (dunkle Variante auf Navy) */}
+        {/* visualized by media castle — gestapelte Signatur (transparent auf Footer-Hintergrund) */}
         <div className="mt-8 pt-6 border-t border-border/60 flex justify-center">
           <a
             href="https://www.media-castle.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="visualized by media castle – zur Media Castle Webseite"
-            className="inline-flex items-center gap-3 no-underline transition-opacity duration-300 hover:opacity-85"
+            className="inline-flex items-center gap-3 no-underline bg-transparent transition-opacity duration-300 hover:opacity-85"
             style={{
               fontFamily: 'Poppins, system-ui, sans-serif',
-              background: '#041833',
-              padding: '12px 20px',
-              borderRadius: '12px',
             }}
           >
             <Image
