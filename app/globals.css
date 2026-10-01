@@ -78,12 +78,30 @@
     border-color: hsl(var(--border));
   }
 
+  html {
+    scroll-behavior: smooth;
+    /* clip (not hidden) so the sticky header keeps working */
+    overflow-x: clip;
+  }
+
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
     font-family: "DM Sans", sans-serif;
     overflow-x: clip;
+    width: 100%;
     line-height: 1.7;
+    /* long German compounds / URLs must never widen the page */
+    overflow-wrap: break-word;
+  }
+
+  /* media never pushes the layout wider than its container */
+  img,
+  svg,
+  video,
+  canvas,
+  iframe {
+    max-width: 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -92,28 +110,33 @@
     line-height: 1.2;
     letter-spacing: -0.01em;
     text-balance: balance;
+    /* "Datenschutzerklaerung" & co. are wider than a 320px phone:
+       hyphenate them (html lang="de") instead of overflowing */
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    overflow-wrap: break-word;
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 1.3rem + 3.5vw, 3rem);
     font-weight: 700;
     margin-bottom: 1.5rem;
   }
 
   h2 {
-    font-size: 2.25rem;
+    font-size: clamp(1.75rem, 1.4rem + 1.75vw, 2.25rem);
     font-weight: 700;
     margin-bottom: 1.25rem;
   }
 
   h3 {
-    font-size: 1.875rem;
+    font-size: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
     font-weight: 600;
     margin-bottom: 1rem;
   }
 
   h4 {
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
     font-weight: 600;
     margin-bottom: 0.875rem;
   }
@@ -121,15 +144,29 @@
   p {
     margin-bottom: 1rem;
     max-width: 65ch;
+    overflow-wrap: break-word;
   }
 
-  html {
-    scroll-behavior: smooth;
+  /* URLs in Impressum/Datenschutz have no break opportunity of their own */
+  a {
+    overflow-wrap: anywhere;
   }
+
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Fluid page/hero headings.
+     Sized so the longest single word on the site ("Datenschutzerklaerung")
+     still fits a 320px viewport without breaking mid-word. */
+  .heading-page {
+    font-size: clamp(1.5rem, 7vw, 3rem);
+  }
+
+  .heading-hero {
+    font-size: clamp(1.5rem, 7vw, 3.75rem);
   }
 }

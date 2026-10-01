@@ -126,7 +126,7 @@ const HeroSlider = ({ slides }) => {
                 <div className="absolute inset-0 flex items-center">
                   <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
                     <div className="max-w-2xl">
-                      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
+                      <h1 className="heading-hero font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
                         {slide.title}
                       </h1>
                       <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">

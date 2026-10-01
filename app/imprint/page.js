@@ -12,7 +12,7 @@ export default function ImprintPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-12">Impressum</h1>
+          <h1 className="heading-page font-bold mb-12">Impressum</h1>
 
           <Card className="bg-card text-card-foreground border-border mb-8">
             <CardHeader>

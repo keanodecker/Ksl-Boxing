@@ -30,7 +30,7 @@ export default function NewsPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Aktuelle News</h1>
+          <h1 className="heading-page font-bold mb-6">Aktuelle News</h1>
           <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-3xl">
             Bleiben Sie auf dem Laufenden über Wettkampfergebnisse, Veranstaltungen und Neuigkeiten aus unserem Verein.
           </p>

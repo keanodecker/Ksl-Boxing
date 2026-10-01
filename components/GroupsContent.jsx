@@ -100,7 +100,7 @@ export default function GroupsContent({ kidsPhotos = [], kidsVideos = [] }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Unsere Trainingsgruppen</h1>
+          <h1 className="heading-page font-bold mb-6">Unsere Trainingsgruppen</h1>
           <p className="text-xl text-muted-foreground mb-16 leading-relaxed max-w-3xl">
             Bei KSL Boxing Lahr findet jeder die passende Trainingsgruppe – vom Anfänger bis zum Wettkämpfer, vom Kind bis zum Erwachsenen.
           </p>
@@ -116,10 +116,10 @@ export default function GroupsContent({ kidsPhotos = [], kidsVideos = [] }) {
                   <Card className="bg-card text-card-foreground border-border">
                     <CardHeader>
                       <div className="flex items-center gap-4 mb-2">
-                        <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                        <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
                           <group.icon className="w-6 h-6 text-primary-foreground" />
                         </div>
-                        <CardTitle className="text-3xl font-semibold">{group.name}</CardTitle>
+                        <CardTitle className="min-w-0 text-2xl sm:text-3xl font-semibold">{group.name}</CardTitle>
                       </div>
                       <p className="text-lg text-muted-foreground leading-relaxed">
                         {group.description}

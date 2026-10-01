@@ -43,7 +43,7 @@ export default function ClubPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Unser Verein</h1>
+          <h1 className="heading-page font-bold mb-6">Unser Verein</h1>
           <p className="text-xl text-muted-foreground mb-16 leading-relaxed max-w-3xl">
             KSL Boxing Lahr steht für Tradition, Leidenschaft und Gemeinschaft im Boxsport.
           </p>
@@ -209,12 +209,12 @@ export default function ClubPage() {
                         </div>
                       ) : null}
                       {/* Info */}
-                      <div className="flex flex-col justify-center">
+                      <div className="min-w-0 flex flex-col justify-center">
                         <h3 className="text-lg font-bold">{coach.name}</h3>
                         <p className="text-primary text-sm font-medium mt-1">{coach.role}</p>
                       </div>
                       {coach.tooltip && (
-                        <div className="absolute -top-9 left-1/2 -translate-x-1/2 bg-black/85 text-white text-xs px-3 py-1.5 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                        <div className="hidden md:block absolute -top-9 left-1/2 -translate-x-1/2 max-w-[min(20rem,80vw)] bg-black/85 text-white text-xs text-center px-3 py-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
                           {coach.tooltip}
                         </div>
                       )}

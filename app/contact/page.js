@@ -14,7 +14,7 @@ export default function ContactPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Kontakt</h1>
+          <h1 className="heading-page font-bold mb-6">Kontakt</h1>
           <p className="text-xl text-muted-foreground mb-16 leading-relaxed max-w-3xl">
             Haben Sie Fragen oder möchten Sie ein Probetraining vereinbaren? Kontaktieren Sie uns – wir freuen uns auf Ihre Nachricht!
           </p>

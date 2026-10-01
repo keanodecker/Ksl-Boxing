@@ -306,13 +306,13 @@ export default function HomePage() {
             </div>
 
             {/* CTA */}
-            <div className="text-center p-8 bg-muted rounded-2xl border border-border">
+            <div className="text-center p-6 sm:p-8 bg-muted rounded-2xl border border-border">
               <p className="text-xl font-semibold mb-6 max-w-xl mx-auto">
                 Werde Teil unserer Erfolgsgeschichte – Probetraining kostenlos.
               </p>
               <Button
                 size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98]"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] h-auto max-w-full whitespace-normal py-3"
                 onClick={() => router.push('/contact')}
               >
                 Jetzt Probetraining vereinbaren

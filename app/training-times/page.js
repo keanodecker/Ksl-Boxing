@@ -59,7 +59,7 @@ export default function TrainingTimesPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Trainingszeiten</h1>
+          <h1 className="heading-page font-bold mb-6">Trainingszeiten</h1>
           <p className="text-xl text-muted-foreground mb-16 leading-relaxed max-w-3xl">
             Hier findest du eine Übersicht aller Trainingszeiten. Bei Fragen kontaktiere uns gerne.
           </p>

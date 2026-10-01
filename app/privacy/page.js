@@ -13,7 +13,7 @@ export default function PrivacyPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Datenschutzerklärung</h1>
+          <h1 className="heading-page font-bold mb-4">Datenschutzerklärung</h1>
           <p className="text-sm text-muted-foreground mb-12">Stand: 2026</p>
 
           <Card className="bg-card text-card-foreground border-border mb-8">

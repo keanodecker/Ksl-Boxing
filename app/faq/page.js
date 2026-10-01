@@ -91,7 +91,7 @@ export default function FAQPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">FAQ</h1>
+          <h1 className="heading-page font-bold mb-4">FAQ</h1>
           <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
             Häufig gestellte Fragen – hier findest du schnelle Antworten.
           </p>
